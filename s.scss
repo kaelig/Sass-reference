@@ -1,0 +1,194 @@
+// ======================== */
+// = Blueprint Grid Setup = */
+// ======================== */
+$font-color: #4d4d4d;
+
+$sassypink: #CE4DD6;
+
+$blueprint-font-family: sans-serif;
+$serif-font-stack: Georgia, serif;
+$blueprint-fixed-font-family: Monaco, "andale mono", "lucida console", monospace;
+$blueprint-font-size: 16px;
+
+$link-color: #0069d6;
+$link-hover-color: darken($link-color, 15%);
+$link-active-color: darken($link-color, 25%);
+$link-visited-color: lighten($link-color, 10%);
+$link-focus-color: darken($link-color, 15%);
+//$experimental-support-for-svg: true;
+$support-for-original-webkit-gradients: true;
+$experimental-support-for-khtml: false;
+
+@import "compass/css3";
+@import "compass/reset";
+
+
+body {
+  
+  // Prevent Webkit and Windows Mobile platforms from changing default font sizes.
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  
+  border-top: 4px solid $sassypink;
+  
+  @media only screen and (max-width : 750px) {
+    padding: .5em 1em;
+  }
+}
+
+@import "blueprint/typography";
+@include blueprint-typography;
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+small, .small {
+  font-size: .75em;
+  line-height: 1.5em;
+}
+
+#content {
+  max-width: 1337px;
+}
+
+$toc-width: 190px;
+.maruku_toc {
+  float: left;
+  width: $toc-width;
+  background: lighten(#F7EBFD, 2%);
+  position: relative;
+  padding: 1em 1em 1.33em 1.33em;
+  margin-right: 2em;
+  @media only screen and (max-width : 750px) {
+    float: none;
+    margin-right: 0;
+    width: auto;
+  }
+  > ul > li {
+    margin-bottom: .5em;
+  }
+  ul {
+    font-size: .875em;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    a {
+      @include link-colors(darken($link-color, 5%), darken($link-color, 1%), darken($link-color, 5%), darken($link-color, 5%), darken($link-color, 1%));
+    }
+    ul {
+      a {
+        @include link-colors($font-color, darken($font-color, 8%), $font-color, $font-color, darken($font-color, 8%));
+      }
+      padding-left: 1em;
+      font-weight: normal;
+      ul ul {
+        font-size: 1em;
+      }
+    }
+  }
+}
+#filecontents {
+  padding-right: 2em;
+  @media only screen and (max-width : 750px) {
+    padding-right: 0;
+  }
+}
+.bettersassdocs {
+  overflow: hidden;
+}
+#intro {
+  @extend .quiet;
+  font-size: 1.2em;
+  padding-right: 240px;
+  min-height: 240px;
+  margin-top: 1.5em;
+  background: url('http://sass-lang.com/images/sass.gif') right top no-repeat;
+  @media only screen and (max-width : 750px) {
+    padding-right: 0;
+    padding-top: 250px;
+    background-position: center top;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif-font-stack;
+}
+
+h2, h3 {
+  margin-top: 2em;
+}
+h2 {
+  border-top: 2px solid #eee;
+}
+h4 {
+  font-weight: bold;
+  color: #777;
+}
+
+
+// This is the title
+#sass_syntactically_awesome_stylesheets {
+  padding: 2.5em .5em 1.5em 3em;
+  h1 {
+    margin-bottom: .2em;
+  }
+  @media only screen and (max-width : 750px) {
+    font-size: .5em;
+    padding: 2.5em .5em 1.5em 1.5em;
+  }
+}
+
+// Highlight headings when reached through the anchor-based navigation
+:target {
+  background: rgba($sassypink, .25);
+}
+
+#footer {
+  @extend .quiet;
+  border-top: 1px solid #D2D2D2;
+  @include box-shadow(#F0F0F0 0 1px 0 inset);
+  font-size: .75em;
+  padding: 2em 2em 2em $toc-width + 70px;
+  
+  h2 {
+    font-size: 1.3em;
+    border-top: 0;
+  }
+  
+  @media only screen and (max-width : 750px) {
+    padding-left: 0;
+  }
+}
+
+.btn {
+  display: inline-block;
+  background-color: $sassypink;
+  padding: 5px 14px 6px;
+  margin-bottom: .2em;
+  font-size: .875em;
+  line-height: normal;
+  font-family: $serif-font-stack;
+  
+  &,
+  &:link,
+  &:visited {
+    color: #fff;
+  }
+  
+  &:hover,
+  &:focus {
+    background-color: lighten($sassypink, 5%);
+    text-decoration: none;
+  }
+  &:active {
+    background-color: darken($sassypink, 10%);
+  }
+}
+
+// Pretty syntax highlighting
+@import 'prettify';
