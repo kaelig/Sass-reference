@@ -60,7 +60,7 @@
 
 <li>Language extensions such as variables, nesting, and mixins</li>
 
-<li>Many <tt><a href="Sass/Script/Functions.html" title="Sass::Script::Functions (module)">useful functions</a></tt> for manipulating colors and other values</li>
+<li>Many <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html" title="Sass::Script::Functions (module)">useful functions</a></tt> for manipulating colors and other values</li>
 
 <li>Advanced features like <a href='#control_directives'>control directives</a> for libraries</li>
 
@@ -73,7 +73,7 @@
 
 <p>There are two syntaxes available for Sass. The first, known as SCSS (Sassy CSS) and used throughout this reference, is an extension of the syntax of CSS3. This means that every valid CSS3 stylesheet is a valid SCSS file with the same meaning. In addition, SCSS understands most CSS hacks and vendor-specific syntax, such as <a href='http://msdn.microsoft.com/en-us/library/ms533754%28VS.85%29.aspx'>IE&#8217;s old <code>filter</code> syntax</a>. This syntax is enhanced with the Sass features described below. Files using this syntax have the <code>.scss</code> extension.</p>
 
-<p>The second and older syntax, known as the indented syntax (or sometimes just &#8220;Sass&#8221;), provides a more concise way of writing CSS. It uses indentation rather than brackets to indicate nesting of selectors, and newlines rather than semicolons to separate properties. Some people find this to be easier to read and quicker to write than SCSS. The indented syntax has all the same features, although some of them have slightly different syntax; this is described in <a href="file.INDENTED_SYNTAX.html" title="the indented syntax reference">the indented syntax reference</a>. Files using this syntax have the <code>.sass</code> extension.</p>
+<p>The second and older syntax, known as the indented syntax (or sometimes just &#8220;Sass&#8221;), provides a more concise way of writing CSS. It uses indentation rather than brackets to indicate nesting of selectors, and newlines rather than semicolons to separate properties. Some people find this to be easier to read and quicker to write than SCSS. The indented syntax has all the same features, although some of them have slightly different syntax; this is described in <a href="http://sass-lang.com/docs/yardoc/file.INDENTED_SYNTAX.html" title="the indented syntax reference">the indented syntax reference</a>. Files using this syntax have the <code>.sass</code> extension.</p>
 
 <p>Either syntax can <a href='#import'>import</a> files written in the other. Files can be automatically converted from one syntax to the other using the <code>sass-convert</code> command line tool:</p>
 
@@ -105,7 +105,7 @@ $ sass-convert style.scss style.sass</pre>
 
 <p>Use <code>sass --help</code> for full documentation.</p>
 
-<p>Using Sass in Ruby code is very simple. After installing the Sass gem, you can use it by running <code>require &quot;sass&quot;</code> and using <tt><a href="Sass/Engine.html" title="Sass::Engine (class)">Sass::Engine</a></tt> like so:</p>
+<p>Using Sass in Ruby code is very simple. After installing the Sass gem, you can use it by running <code>require &quot;sass&quot;</code> and using <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Engine.html" title="Sass::Engine (class)">Sass::Engine</a></tt> like so:</p>
 
 <pre class="code">engine = Sass::Engine.new(&quot;#main {background-color: #0000ff}&quot;, :syntax =&gt; :scss)
 engine.render #=&gt; &quot;#main { background-color: #0000ff; }\n&quot;</pre>
@@ -141,7 +141,7 @@ use Sass::Plugin::Rack</pre>
 
 <h3 id='options'>Options</h3>
 
-<p>Options can be set by setting the <tt><a href="Sass/Plugin/Configuration.html#options-instance_method" title="Sass::Plugin::Configuration#options (method)">Sass::Plugin#options</a></tt> hash in <code>environment.rb</code> in Rails or <code>config.ru</code> in Rack&#8230;</p>
+<p>Options can be set by setting the <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Plugin/Configuration.html#options-instance_method" title="Sass::Plugin::Configuration#options (method)">Sass::Plugin#options</a></tt> hash in <code>environment.rb</code> in Rails or <code>config.ru</code> in Rack&#8230;</p>
 
 <pre class="code">Sass::Plugin.options[:style] = :compact</pre>
 
@@ -149,7 +149,7 @@ use Sass::Plugin::Rack</pre>
 
 <pre class="code">Merb::Plugin.config[:sass][:style] = :compact</pre>
 
-<p>&#8230;or by passing an options hash to <tt><a href="Sass/Engine.html#initialize-instance_method" title="Sass::Engine#initialize (method)">Sass::Engine#initialize</a></tt>. All relevant options are also available via flags to the <code>sass</code> and <code>scss</code> command-line executables. Available options are:</p>
+<p>&#8230;or by passing an options hash to <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Engine.html#initialize-instance_method" title="Sass::Engine#initialize (method)">Sass::Engine#initialize</a></tt>. All relevant options are also available via flags to the <code>sass</code> and <code>scss</code> command-line executables. Available options are:</p>
 
 <dl>
 <dt id='style-option'> <code>:style</code></dt>
@@ -158,7 +158,7 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='syntax-option'> <code>:syntax</code></dt>
 
-<dd>The syntax of the input file, <code>:sass</code> for the indented syntax and <code>:scss</code> for the CSS-extension syntax. This is only useful when you&#8217;re constructing <tt><a href="Sass/Engine.html" title="Sass::Engine (class)">Sass::Engine</a></tt> instances yourself; it&#8217;s automatically set properly when using <tt><a href="Sass/Plugin.html" title="Sass::Plugin (module)">Sass::Plugin</a></tt>. Defaults to <code>:sass</code>.</dd>
+<dd>The syntax of the input file, <code>:sass</code> for the indented syntax and <code>:scss</code> for the CSS-extension syntax. This is only useful when you&#8217;re constructing <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Engine.html" title="Sass::Engine (class)">Sass::Engine</a></tt> instances yourself; it&#8217;s automatically set properly when using <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Plugin.html" title="Sass::Plugin (module)">Sass::Plugin</a></tt>. Defaults to <code>:sass</code>.</dd>
 
 <dt id='property_syntax-option'> <code>:property_syntax</code></dt>
 
@@ -174,7 +174,7 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='cache_store-option'> <code>:cache_store</code></dt>
 
-<dd>If this is set to an instance of a subclass of <tt><a href="Sass/CacheStores/Base.html" title="Sass::CacheStores::Base (class)">Sass::CacheStores::Base</a></tt>, that cache store will be used to store and retrieve cached compilation results. Defaults to a <tt><a href="Sass/CacheStores/Filesystem.html" title="Sass::CacheStores::Filesystem (class)">Sass::CacheStores::Filesystem</a></tt> that is initialized using the <a href='#cache_location-option'><code>:cache_location</code> option</a>.</dd>
+<dd>If this is set to an instance of a subclass of <tt><a href="http://sass-lang.com/docs/yardoc/Sass/CacheStores/Base.html" title="Sass::CacheStores::Base (class)">Sass::CacheStores::Base</a></tt>, that cache store will be used to store and retrieve cached compilation results. Defaults to a <tt><a href="http://sass-lang.com/docs/yardoc/Sass/CacheStores/Filesystem.html" title="Sass::CacheStores::Filesystem (class)">Sass::CacheStores::Filesystem</a></tt> that is initialized using the <a href='#cache_location-option'><code>:cache_location</code> option</a>.</dd>
 
 <dt id='never_update-option'> <code>:never_update</code></dt>
 
@@ -194,7 +194,7 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='template_location-option'> <code>:template_location</code></dt>
 
-<dd>A path to the root sass template directory for your application. If a hash, <code>:css_location</code> is ignored and this option designates a mapping between input and output directories. May also be given a list of 2-element lists, instead of a hash. Defaults to <code>css_location + &quot;/sass&quot;</code>. Only has meaning within Rack, Ruby on Rails, or Merb. Note that if multiple template locations are specified, all of them are placed in the import path, allowing you to import between them. <strong>Note that due to the many possible formats it can take, this option should only be set directly, not accessed or modified. Use the <tt><a href="Sass/Plugin/Configuration.html#template_location_array-instance_method" title="Sass::Plugin::Configuration#template_location_array (method)">Sass::Plugin#template_location_array</a></tt>, <tt><a href="Sass/Plugin/Configuration.html#add_template_location-instance_method" title="Sass::Plugin::Configuration#add_template_location (method)">Sass::Plugin#add_template_location</a></tt>, and <tt><a href="Sass/Plugin/Configuration.html#remove_template_location-instance_method" title="Sass::Plugin::Configuration#remove_template_location (method)">Sass::Plugin#remove_template_location</a></tt> methods instead</strong>.</dd>
+<dd>A path to the root sass template directory for your application. If a hash, <code>:css_location</code> is ignored and this option designates a mapping between input and output directories. May also be given a list of 2-element lists, instead of a hash. Defaults to <code>css_location + &quot;/sass&quot;</code>. Only has meaning within Rack, Ruby on Rails, or Merb. Note that if multiple template locations are specified, all of them are placed in the import path, allowing you to import between them. <strong>Note that due to the many possible formats it can take, this option should only be set directly, not accessed or modified. Use the <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Plugin/Configuration.html#template_location_array-instance_method" title="Sass::Plugin::Configuration#template_location_array (method)">Sass::Plugin#template_location_array</a></tt>, <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Plugin/Configuration.html#add_template_location-instance_method" title="Sass::Plugin::Configuration#add_template_location (method)">Sass::Plugin#add_template_location</a></tt>, and <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Plugin/Configuration.html#remove_template_location-instance_method" title="Sass::Plugin::Configuration#remove_template_location (method)">Sass::Plugin#remove_template_location</a></tt> methods instead</strong>.</dd>
 
 <dt id='css_location-option'> <code>:css_location</code></dt>
 
@@ -206,7 +206,7 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='unix_newlines-option'> <code>:unix_newlines</code></dt>
 
-<dd>If true, use Unix-style newlines when writing files. Only has meaning on Windows, and only when Sass is writing the files (in Rack, Rails, or Merb, when using <tt><a href="Sass/Plugin.html" title="Sass::Plugin (module)">Sass::Plugin</a></tt> directly, or when using the command-line executable).</dd>
+<dd>If true, use Unix-style newlines when writing files. Only has meaning on Windows, and only when Sass is writing the files (in Rack, Rails, or Merb, when using <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Plugin.html" title="Sass::Plugin (module)">Sass::Plugin</a></tt> directly, or when using the command-line executable).</dd>
 
 <dt id='filename-option'> <code>:filename</code></dt>
 
@@ -218,11 +218,11 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='load_paths-option'> <code>:load_paths</code></dt>
 
-<dd>An array of filesystem paths or importers which should be searched for Sass templates imported with the <a href='#import'><code>@import</code></a> directive. These may be strings, <code>Pathname</code> objects, or subclasses of <tt><a href="Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt>. This defaults to the working directory and, in Rack, Rails, or Merb, whatever <code>:template_location</code> is. The load path is also informed by <tt><a href="Sass.html#load_paths-class_method" title="Sass.load_paths (method)">Sass.load_paths</a></tt> and the <code>SASS_PATH</code> environment variable.</dd>
+<dd>An array of filesystem paths or importers which should be searched for Sass templates imported with the <a href='#import'><code>@import</code></a> directive. These may be strings, <code>Pathname</code> objects, or subclasses of <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt>. This defaults to the working directory and, in Rack, Rails, or Merb, whatever <code>:template_location</code> is. The load path is also informed by <tt><a href="http://sass-lang.com/docs/yardoc/Sass.html#load_paths-class_method" title="Sass.load_paths (method)">Sass.load_paths</a></tt> and the <code>SASS_PATH</code> environment variable.</dd>
 
 <dt id='filesystem_importer-option'> <code>:filesystem_importer</code></dt>
 
-<dd>A <tt><a href="Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt> subclass used to handle plain string load paths. This should import files from the filesystem. It should be a Class object inheriting from <tt><a href="Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt> with a constructor that takes a single string argument (the load path). Defaults to <tt><a href="Sass/Importers/Filesystem.html" title="Sass::Importers::Filesystem (class)">Sass::Importers::Filesystem</a></tt>.</dd>
+<dd>A <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt> subclass used to handle plain string load paths. This should import files from the filesystem. It should be a Class object inheriting from <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt> with a constructor that takes a single string argument (the load path). Defaults to <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Importers/Filesystem.html" title="Sass::Importers::Filesystem (class)">Sass::Importers::Filesystem</a></tt>.</dd>
 
 <dt id='line_numbers-option'> <code>:line_numbers</code></dt>
 
@@ -238,7 +238,7 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='custom-option'> <code>:custom</code></dt>
 
-<dd>An option that&#8217;s available for individual applications to set to make data available to <tt><a href="Sass/Script/Functions.html" title="Sass::Script::Functions (module)">custom Sass functions</a></tt>.</dd>
+<dd>An option that&#8217;s available for individual applications to set to make data available to <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html" title="Sass::Script::Functions (module)">custom Sass functions</a></tt>.</dd>
 
 <dt id='quiet-option'> <code>:quiet</code></dt>
 
@@ -507,7 +507,7 @@ white</pre>
 
 <p>Lists are how Sass represents the values of CSS declarations like <code>margin: 10px 15px 0 0</code> or <code>font-face: Helvetica, Arial, sans-serif</code>. Lists are just a series of other values, separated by either spaces or commas. In fact, individual values count as lists, too: they&#8217;re just lists with one item.</p>
 
-<p>On their own, lists don&#8217;t do much, but the <a href='Sass/Script/Functions.html#list-functions'>Sass list functions</a> make them useful. The <tt><a href="Sass/Script/Functions.html#nth-instance_method" title="Sass::Script::Functions#nth (method)">nth function</a></tt> can access items in a list, the <tt><a href="Sass/Script/Functions.html#join-instance_method" title="Sass::Script::Functions#join (method)">join function</a></tt> can join multiple lists together, and the <tt><a href="Sass/Script/Functions.html#append-instance_method" title="Sass::Script::Functions#append (method)">append function</a></tt> can add items to lists. The <a href='#each-directive'><code>@each</code> rule</a> can also add styles for each item in a list.</p>
+<p>On their own, lists don&#8217;t do much, but the <a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#list-functions'>Sass list functions</a> make them useful. The <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#nth-instance_method" title="Sass::Script::Functions#nth (method)">nth function</a></tt> can access items in a list, the <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#join-instance_method" title="Sass::Script::Functions#join (method)">join function</a></tt> can join multiple lists together, and the <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#append-instance_method" title="Sass::Script::Functions#append (method)">append function</a></tt> can add items to lists. The <a href='#each-directive'><code>@each</code> rule</a> can also add styles for each item in a list.</p>
 
 <p>In addition to containing simple values, lists can contain other lists. For example, <code>1px 2px, 5px 6px</code> is a two-item list containing the list <code>1px 2px</code> and the list <code>5px 6px</code>. If the inner lists have the same separator as the outer list, you&#8217;ll need to use parentheses to make it clear where the inner lists start and stop. For example, <code>(1px 2px) (5px 6px)</code> is also a two-item list containing the list <code>1px 2px</code> and the list <code>5px 6px</code>. The difference is that the outer list is space-separated, where before it was comma-separated.</p>
 
@@ -593,7 +593,7 @@ white</pre>
 <pre class="code prettyprint language-css">p {
   color: #050709; }</pre>
 
-<p>Often it&#8217;s more useful to use <tt><a href="Sass/Script/Functions.html" title="Sass::Script::Functions (module)">color functions</a></tt> than to try to use color arithmetic to achieve the same effect.</p>
+<p>Often it&#8217;s more useful to use <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html" title="Sass::Script::Functions (module)">color functions</a></tt> than to try to use color arithmetic to achieve the same effect.</p>
 
 <p>Arithmetic operations also work between numbers and colors, also piecewise. For example:</p>
 
@@ -606,7 +606,7 @@ white</pre>
 <pre class="code prettyprint language-css">p {
   color: #020406; }</pre>
 
-<p>Note that colors with an alpha channel (those created with the <tt><a href="Sass/Script/Functions.html#rgba-instance_method" title="Sass::Script::Functions#rgba (method)">rgba</a></tt> or <tt><a href="Sass/Script/Functions.html#hsla-instance_method" title="Sass::Script::Functions#hsla (method)">hsla</a></tt> functions) must have the same alpha value in order for color arithmetic to be done with them. The arithmetic doesn&#8217;t affect the alpha value. For example:</p>
+<p>Note that colors with an alpha channel (those created with the <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#rgba-instance_method" title="Sass::Script::Functions#rgba (method)">rgba</a></tt> or <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#hsla-instance_method" title="Sass::Script::Functions#hsla (method)">hsla</a></tt> functions) must have the same alpha value in order for color arithmetic to be done with them. The arithmetic doesn&#8217;t affect the alpha value. For example:</p>
 
 <pre class="code prettyprint language-css">p {
   color: rgba(255, 0, 0, 0.75) + rgba(0, 255, 0, 0.75);
@@ -617,7 +617,7 @@ white</pre>
 <pre class="code prettyprint language-css">p {
   color: rgba(255, 255, 0, 0.75); }</pre>
 
-<p>The alpha channel of a color can be adjusted using the <tt><a href="Sass/Script/Functions.html#opacify-instance_method" title="Sass::Script::Functions#opacify (method)">opacify</a></tt> and <tt><a href="Sass/Script/Functions.html#transparentize-instance_method" title="Sass::Script::Functions#transparentize (method)">transparentize</a></tt> functions. For example:</p>
+<p>The alpha channel of a color can be adjusted using the <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#opacify-instance_method" title="Sass::Script::Functions#opacify (method)">opacify</a></tt> and <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#transparentize-instance_method" title="Sass::Script::Functions#transparentize (method)">transparentize</a></tt> functions. For example:</p>
 
 <pre class="code prettyprint language-css">$translucent-red: rgba(255, 0, 0, 0.5);
 p {
@@ -631,7 +631,7 @@ p {
   color: rgba(255, 0, 0, 0.9);
   background-color: rgba(255, 0, 0, 0.25); }</pre>
 
-<p>IE filters require all colors include the alpha layer, and be in the strict format of #AABBCCDD. You can more easily convert the color using the <tt><a href="Sass/Script/Functions.html#ie_hex_str-instance_method" title="Sass::Script::Functions#ie_hex_str (method)">ie_hex_str</a></tt> function. For example:</p>
+<p>IE filters require all colors include the alpha layer, and be in the strict format of #AABBCCDD. You can more easily convert the color using the <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#ie_hex_str-instance_method" title="Sass::Script::Functions#ie_hex_str (method)">ie_hex_str</a></tt> function. For example:</p>
 
 <pre class="code prettyprint language-css">$translucent-red: rgba(255, 0, 0, 0.5);
 $green: #00ff00;
@@ -709,7 +709,7 @@ p:before {
 
 <h4 id='list_operations'>List Operations</h4>
 
-<p>Lists don&#8217;t support any special operations. Instead, they&#8217;re manipulated using the <a href='Sass/Script/Functions.html#list-functions'>list functions</a>.</p>
+<p>Lists don&#8217;t support any special operations. Instead, they&#8217;re manipulated using the <a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#list-functions'>list functions</a>.</p>
 
 <h3 id='parentheses'>Parentheses</h3>
 
@@ -749,7 +749,7 @@ p:before {
 
 <p>Named arguments can be passed in any order, and arguments with default values can be omitted. Since the named arguments are variable names, underscores and dashes can be used interchangeably.</p>
 
-<p>See <tt><a href="Sass/Script/Functions.html" title="Sass::Script::Functions (module)">Sass::Script::Functions</a></tt> for a full listing of Sass functions and their argument names, as well as instructions on defining your own in Ruby.</p>
+<p>See <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html" title="Sass::Script::Functions (module)">Sass::Script::Functions</a></tt> for a full listing of Sass functions and their argument names, as well as instructions on defining your own in Ruby.</p>
 
 <h3 id='interpolation_'>Interpolation: <code>#{}</code></h3>
 
@@ -815,7 +815,7 @@ $content: &quot;Non-null content&quot; !default;
 
 <h2 id='directives'><code>@</code>-Rules and Directives</h2>
 
-<p>Sass supports all CSS3 <code>@</code>-rules, as well as some additional Sass-specific ones known as &#8220;directives.&#8221; These have various effects in Sass, detailed below. See also <a href='#control-directives'>control directives</a> and <a href='#mixins'>mixin directives</a>.</p>
+<p>Sass supports all CSS3 <code>@</code>-rules, as well as some additional Sass-specific ones known as &#8220;directives.&#8221; These have various effects in Sass, detailed below. See also <a href='#control_directives'>control directives</a> and <a href='#mixins'>mixin directives</a>.</p>
 
 <h3 id='import'><code>@import</code></h3>
 
@@ -1683,7 +1683,7 @@ $gutter-width: 10px;
 
 <p>It is recommended that you prefix your functions to avoid naming conflicts and so that readers of your stylesheets know they are not part of Sass or CSS. For example, if you work for ACME Corp, you might have named the function above <code>-acme-grid-width</code>.</p>
 
-<p>User-defined functions also support <a href='#variable-arguments'>variable arguments</a> in the same way as mixins.</p>
+<p>User-defined functions also support <a href='#variable_arguments'>variable arguments</a> in the same way as mixins.</p>
 
 <h2 id='output_style'>Output Style</h2>
 
@@ -1747,21 +1747,21 @@ $gutter-width: 10px;
 
 <h3 id='defining_custom_sass_functions'>Defining Custom Sass Functions</h3>
 
-<p>Users can define their own Sass functions using the Ruby API. For more information, see the <a href='Sass/Script/Functions.html#adding_custom_functions'>source documentation</a>.</p>
+<p>Users can define their own Sass functions using the Ruby API. For more information, see the <a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#adding_custom_functions'>source documentation</a>.</p>
 
 <h3 id='cache_stores'>Cache Stores</h3>
 
-<p>Sass caches parsed documents so that they can be reused without parsing them again unless they have changed. By default, Sass will write these cache files to a location on the filesystem indicated by <a href='#cache_location-option'><code>:cache_location</code></a>. If you cannot write to the filesystem or need to share cache across ruby processes or machines, then you can define your own cache store and set the<a href='#cache_store-option'><code>:cache_store</code> option</a>. For details on creating your own cache store, please see the <tt><a href="Sass/CacheStores/Base.html" title="Sass::CacheStores::Base (class)">source documentation</a></tt>.</p>
+<p>Sass caches parsed documents so that they can be reused without parsing them again unless they have changed. By default, Sass will write these cache files to a location on the filesystem indicated by <a href='#cache_location-option'><code>:cache_location</code></a>. If you cannot write to the filesystem or need to share cache across ruby processes or machines, then you can define your own cache store and set the<a href='#cache_store-option'><code>:cache_store</code> option</a>. For details on creating your own cache store, please see the <tt><a href="http://sass-lang.com/docs/yardoc/Sass/CacheStores/Base.html" title="Sass::CacheStores::Base (class)">source documentation</a></tt>.</p>
 
 <h3 id='custom_importers'>Custom Importers</h3>
 
-<p>Sass importers are in charge of taking paths passed to <code>@import</code> and finding the appropriate Sass code for those paths. By default, this code is loaded from the <tt><a href="Sass/Importers/Filesystem.html" title="Sass::Importers::Filesystem (class)">filesystem</a></tt>, but importers could be added to load from a database, over HTTP, or use a different file naming scheme than what Sass expects.</p>
+<p>Sass importers are in charge of taking paths passed to <code>@import</code> and finding the appropriate Sass code for those paths. By default, this code is loaded from the <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Importers/Filesystem.html" title="Sass::Importers::Filesystem (class)">filesystem</a></tt>, but importers could be added to load from a database, over HTTP, or use a different file naming scheme than what Sass expects.</p>
 
-<p>Each importer is in charge of a single load path (or whatever the corresponding notion is for the backend). Importers can be placed in the <a href="file.SASS_REFERENCE.html#load_paths-option" title="&lt;code&gt;:load_paths&lt;/code&gt; array"><code>:load_paths</code> array</a> alongside normal filesystem paths.</p>
+<p>Each importer is in charge of a single load path (or whatever the corresponding notion is for the backend). Importers can be placed in the <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#load_paths-option" title="&lt;code&gt;:load_paths&lt;/code&gt; array"><code>:load_paths</code> array</a> alongside normal filesystem paths.</p>
 
 <p>When resolving an <code>@import</code>, Sass will go through the load paths looking for an importer that successfully imports the path. Once one is found, the imported file is used.</p>
 
-<p>User-created importers must inherit from <tt><a href="Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt>.</p></div></div>
+<p>User-created importers must inherit from <tt><a href="http://sass-lang.com/docs/yardoc/Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt>.</p></div></div>
 
       </div>
     </div>
