@@ -1,3 +1,9 @@
+/*
+  You are looking at the compiled version of the CSS
+
+  You can view the source Sass file here:
+  https://github.com/Kaelig/Sass-reference/blob/master/s.scss
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -14,11 +20,11 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline; }
 
-body {
+html {
   line-height: 1; }
 
 ol, ul {
@@ -49,7 +55,7 @@ body {
   -webkit-text-size-adjust: none;
   -ms-text-size-adjust: none;
   border-top: 4px solid #ce4dd6; }
-  @media only screen and (max-width : 750px) {
+  @media only screen and (max-width: 750px) {
     body {
       padding: .5em 1em; } }
 
@@ -219,11 +225,13 @@ small, .small {
   position: relative;
   padding: 1em 1em 1.33em 1.33em;
   margin-right: 2em; }
-  @media only screen and (max-width : 750px) {
+  @media only screen and (max-width: 750px) {
     .maruku_toc {
       float: none;
       margin-right: 0;
       width: auto; } }
+  .maruku_toc ul {
+    list-style-type: none; }
   .maruku_toc > ul > li {
     margin-bottom: .5em; }
   .maruku_toc ul {
@@ -259,7 +267,7 @@ small, .small {
 
 #filecontents {
   padding-right: 2em; }
-  @media only screen and (max-width : 750px) {
+  @media only screen and (max-width: 750px) {
     #filecontents {
       padding-right: 0; } }
 
@@ -272,7 +280,7 @@ small, .small {
   min-height: 240px;
   margin-top: 1.5em;
   background: url("http://sass-lang.com/images/sass.gif") right top no-repeat; }
-  @media only screen and (max-width : 750px) {
+  @media only screen and (max-width: 750px) {
     #intro {
       padding-right: 0;
       padding-top: 250px;
@@ -295,7 +303,7 @@ h4 {
   padding: 2.5em .5em 1.5em 3em; }
   #sass_syntactically_awesome_stylesheets h1 {
     margin-bottom: .2em; }
-  @media only screen and (max-width : 750px) {
+  @media only screen and (max-width: 750px) {
     #sass_syntactically_awesome_stylesheets {
       font-size: .5em;
       padding: 2.5em .5em 1.5em 1.5em; } }
@@ -305,16 +313,15 @@ h4 {
 
 #footer {
   border-top: 1px solid #D2D2D2;
-  -moz-box-shadow: #f0f0f0 0 1px 0 inset;
   -webkit-box-shadow: #f0f0f0 0 1px 0 inset;
-  -o-box-shadow: #f0f0f0 0 1px 0 inset;
+  -moz-box-shadow: #f0f0f0 0 1px 0 inset;
   box-shadow: #f0f0f0 0 1px 0 inset;
   font-size: .75em;
   padding: 2em 2em 2em 260px; }
   #footer h2 {
     font-size: 1.3em;
     border-top: 0; }
-  @media only screen and (max-width : 750px) {
+  @media only screen and (max-width: 750px) {
     #footer {
       padding-left: 0; } }
 
@@ -338,15 +345,22 @@ h4 {
   color: #93a1a1; }
 .bettersassdocs .lit {
   color: #195f91; }
-.bettersassdocs .pun, .bettersassdocs .opn, .bettersassdocs .clo {
+.bettersassdocs .pun,
+.bettersassdocs .opn,
+.bettersassdocs .clo {
   color: #93a1a1; }
 .bettersassdocs .fun {
   color: #dc322f; }
-.bettersassdocs .str, .bettersassdocs .atv {
+.bettersassdocs .str,
+.bettersassdocs .atv {
   color: #268bd2; }
-.bettersassdocs .kwd, .bettersassdocs .tag {
+.bettersassdocs .kwd,
+.bettersassdocs .tag {
   color: #195f91; }
-.bettersassdocs .typ, .bettersassdocs .atn, .bettersassdocs .dec, .bettersassdocs .var {
+.bettersassdocs .typ,
+.bettersassdocs .atn,
+.bettersassdocs .dec,
+.bettersassdocs .var {
   color: #CB4B16; }
 .bettersassdocs .pln {
   color: #738181; }
@@ -354,28 +368,13 @@ h4 {
   background-color: #fefbf3;
   padding: 9px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px; }
-.bettersassdocs ol.linenums {
-  margin: 0 0 0 40px; }
-.bettersassdocs ol.linenums li {
-  padding: 0 5px;
-  color: rgba(0, 0, 0, 0.15);
-  line-height: 20px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -o-border-radius: 2px;
-  -ms-border-radius: 2px;
-  border-radius: 2px; }
-.bettersassdocs code, .bettersassdocs pre {
+.bettersassdocs code,
+.bettersassdocs pre {
   padding: 0 3px 2px;
   font-family: Monaco, Andale Mono, Courier New, monospace;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
   border-radius: 3px; }
 .bettersassdocs code {
   background-color: #f7c9b6;

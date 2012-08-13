@@ -1,9 +1,18 @@
-// ======================== */
-// = Blueprint Grid Setup = */
-// ======================== */
-$font-color: #4d4d4d;
+/*!
+  You are looking at the compiled version of the CSS
 
+  You can view the source Sass file here:
+  https://github.com/Kaelig/Sass-reference/blob/master/s.scss
+*/
+
+// Hmmm, Sassy!
 $sassypink: #CE4DD6;
+
+// ============================== */
+// = Blueprint Typography Setup = */
+// ============================== */
+
+$font-color: #4d4d4d;
 
 $blueprint-font-family: sans-serif;
 $serif-font-stack: Georgia, serif;
@@ -15,13 +24,11 @@ $link-hover-color: darken($link-color, 15%);
 $link-active-color: darken($link-color, 25%);
 $link-visited-color: lighten($link-color, 10%);
 $link-focus-color: darken($link-color, 15%);
-//$experimental-support-for-svg: true;
 $support-for-original-webkit-gradients: true;
 $experimental-support-for-khtml: false;
 
 @import "compass/css3";
 @import "compass/reset";
-
 
 body {
   
@@ -68,6 +75,9 @@ $toc-width: 190px;
     float: none;
     margin-right: 0;
     width: auto;
+  }
+  ul {
+    list-style-type: none;
   }
   > ul > li {
     margin-bottom: .5em;
