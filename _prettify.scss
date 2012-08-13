@@ -1,43 +1,51 @@
 .bettersassdocs {
   .com { color: #93a1a1; }
   .lit { color: #195f91; }
-  .pun, .opn, .clo { color: #93a1a1; }
+  .pun,
+  .opn,
+  .clo { color: #93a1a1; }
   .fun { color: #dc322f; }
-  .str, .atv { color: #268bd2; }
-  .kwd, .tag { color: #195f91; }
-  .typ, .atn, .dec, .var { color: #CB4B16; }
+  .str,
+  .atv { color: #268bd2; }
+  .kwd,
+  .tag { color: #195f91; }
+  .typ,
+  .atn,
+  .dec,
+  .var { color: #CB4B16; }
   .pln { color: #738181; }
   .prettyprint {
     background-color: #fefbf3;
     padding: 9px;
-    border: 1px solid rgba(0,0,0,.2);
-    @include box-shadow(rgba(0,0,0,.1) 0 1px 2px);
+    border: 1px solid rgba(0, 0, 0, .2);
+    @include box-shadow(rgba(0, 0, 0, .1) 0 1px 2px);
   }
 
   // Specify class=linenums on a pre to get line numbering */
-  ol.linenums {
-    margin: 0 0 0 40px;
-  }
-  // IE indents via margin-left */
-  ol.linenums li {
-    padding: 0 5px;
-    color: rgba(0,0,0,.15);
-    line-height: 20px;
-    @include border-radius(2px);
-  }
+  //  ol.linenums {
+  //    margin: 0 0 0 40px;
+  //    // IE indents via margin-left */
+  //    li {
+  //      padding: 0 5px;
+  //      color: rgba(0, 0, 0, .15);
+  //      line-height: 20px;
+  //      border-radius: 2px;
+  //    }
+  //  }
 
   $orange: #cb4b16;
 
 
   // Inline and block code styles
-  code, pre {
+  code,
+  pre {
     padding: 0 3px 2px;
     font-family: Monaco, Andale Mono, Courier New, monospace;
-    @include border-radius(3px);
+    border-radius: 3px;
   }
   code {
     background-color: lighten($orange, 40%);
-    color: rgba(0,0,0,.75);
+    color: rgba(0, 0, 0, .75);
     padding: 1px 3px;
   }
   pre {
@@ -48,10 +56,9 @@
     line-height: 1.5em;
     font-size: 1em;
     border: 1px solid #ccc;
-    border: 1px solid rgba(0,0,0,.15);
+    border: 1px solid rgba(0, 0, 0, .15);
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
 }
-
