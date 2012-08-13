@@ -492,7 +492,9 @@ white</pre>
 
 <pre class="code prettyprint language-css">@mixin firefox-message($selector) {
   body.firefox #{$selector}:before {
-    content: &quot;Hi, Firefox users!&quot;; } }
+    content: &quot;Hi, Firefox users!&quot;;
+  }
+}
 
 @include firefox-message(&quot;.header&quot;);</pre>
 
@@ -662,7 +664,8 @@ div {
 
 <pre class="code prettyprint language-css">p:before {
   content: &quot;Foo &quot; + Bar;
-  font-family: sans- + &quot;serif&quot;; }</pre>
+  font-family: sans- + &quot;serif&quot;;
+}</pre>
 
 <p>is compiled to:</p>
 
@@ -684,7 +687,8 @@ div {
 <p>Within a string of text, #{} style interpolation can be used to place dynamic values within the string:</p>
 
 <pre class="code prettyprint language-css">p:before {
-  content: &quot;I ate #{5 + 10} pies!&quot;; }</pre>
+  content: &quot;I ate #{5 + 10} pies!&quot;;
+}</pre>
 
 <p>is compiled to:</p>
 
@@ -695,13 +699,13 @@ div {
 
 <pre class="code prettyprint language-css">$value: null;
 p:before {
-  content: &quot;I ate #{$value} pies!&quot;; }</pre>
+  content: &quot;I ate #{$value} pies!&quot;;
+}</pre>
 
 <p>is compiled to:</p>
 
 <pre class="code prettyprint language-css">p:before {
-  content: &quot;I ate  pies!&quot;;
-  font-family: sans-; }</pre>
+  content: &quot;I ate  pies!&quot;; }</pre>
 
 <h4 id='boolean_operations'>Boolean Operations</h4>
 
@@ -757,7 +761,9 @@ p:before {
 
 <pre class="code prettyprint language-css">$name: foo;
 $attr: border;
-p.#{$name} { #{$attr}-color: blue }</pre>
+p.#{$name} {
+  #{$attr}-color: blue;
+}</pre>
 
 <p>is compiled to:</p>
 
@@ -775,8 +781,7 @@ p.#{$name} { #{$attr}-color: blue }</pre>
 <p>is compiled to:</p>
 
 <pre class="code prettyprint language-css">p {
-  font: 12px/30px;
-}</pre>
+  font: 12px/30px; }</pre>
 
 <h3 id='variable_defaults_'>Variable Defaults: <code>!default</code></h3>
 
@@ -924,13 +929,10 @@ $content: &quot;Non-null content&quot; !default;
 <p>is compiled to:</p>
 
 <pre class="code prettyprint language-css">.sidebar {
-  width: 300px;
-}
+  width: 300px; }
 @media screen and (orientation: landscape) {
   .sidebar {
-    width: 500px;
-  }
-}</pre>
+    width: 500px; } }</pre>
 
 <p><code>@media</code> queries can also be nested within one another. The queries will then be combined using the <code>and</code> operator. For example:</p>
 
@@ -946,9 +948,7 @@ $content: &quot;Non-null content&quot; !default;
 
 <pre class="code prettyprint language-css">@media screen and (orientation: landscape) {
   .sidebar {
-    width: 500px;
-  }
-}</pre>
+    width: 500px; } }</pre>
 
 <p>Finally, <code>@media</code> queries can contain SassScript expressions (including variables, functions, and operators) in place of the feature names and feature values. For example:</p>
 
@@ -966,9 +966,7 @@ $value: 1.5;
 
 <pre class="code prettyprint language-css">@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
   .sidebar {
-    width: 500px;
-  }
-}</pre>
+    width: 500px; } }</pre>
 
 <h3 id='extend'><code>@extend</code></h3>
 
@@ -1045,25 +1043,37 @@ $value: 1.5;
 
 <p>Class selectors aren&#8217;t the only things that can be extended. It&#8217;s possible to extend any selector involving only a single element, such as <code>.special.cool</code>, <code>a:hover</code>, or <code>a.user[href^=&quot;http://&quot;]</code>. For example:</p>
 
-<pre class="code prettyprint language-css">.hoverlink {@extend a:hover}</pre>
+<pre class="code prettyprint language-css">.hoverlink {
+  @extend a:hover;
+}</pre>
 
 <p>Just like with classes, this means that all styles defined for <code>a:hover</code> are also applied to <code>.hoverlink</code>. For example:</p>
 
-<pre class="code prettyprint language-css">.hoverlink {@extend a:hover}
-a:hover {text-decoration: underline}</pre>
+<pre class="code prettyprint language-css">.hoverlink {
+  @extend a:hover;
+}
+a:hover {
+  text-decoration: underline;
+}</pre>
 
 <p>is compiled to:</p>
 
-<pre class="code prettyprint language-css">a:hover, .hoverlink {text-decoration: underline}</pre>
+<pre class="code prettyprint language-css">a:hover, .hoverlink {
+  text-decoration: underline; }</pre>
 
 <p>Just like with <code>.error.intrusion</code> above, any rule that uses <code>a:hover</code> will also work for <code>.hoverlink</code>, even if they have other selectors as well. For example:</p>
 
-<pre class="code prettyprint language-css">.hoverlink {@extend a:hover}
-.comment a.user:hover {font-weight: bold}</pre>
+<pre class="code prettyprint language-css">.hoverlink {
+  @extend a:hover;
+}
+.comment a.user:hover {
+  font-weight: bold;
+}</pre>
 
 <p>is compiled to:</p>
 
-<pre class="code prettyprint language-css">.comment a.user:hover, .comment .hoverlink.user {font-weight: bold}</pre>
+<pre class="code prettyprint language-css">.comment a.user:hover, .comment .hoverlink.user {
+  font-weight: bold; }</pre>
 
 <h4 id='multiple_extends'>Multiple Extends</h4>
 
@@ -1141,11 +1151,15 @@ a:hover {text-decoration: underline}</pre>
 
 <p>Selector sequences, such as <code>.foo .bar</code> or <code>.foo + .bar</code>, currently can&#8217;t be extended. However, it is possible for nested selectors themselves to use <code>@extend</code>. For example:</p>
 
-<pre class="code prettyprint language-css">#fake-links .link {@extend a}
+<pre class="code prettyprint language-css">#fake-links .link {
+  @extend a;
+}
 
 a {
   color: blue;
-  &amp;:hover {text-decoration: underline}
+  &amp;:hover {
+    text-decoration: underline;
+  }
 }</pre>
 
 <p>is compiled to</p>
@@ -1159,15 +1173,23 @@ a {
 
 <p>Sometimes a selector sequence extends another selector that appears in another sequence. In this case, the two sequences need to be merged. For example:</p>
 
-<pre class="code prettyprint language-css">#admin .tabbar a {font-weight: bold}
-#demo .overview .fakelink {@extend a}</pre>
+<pre class="code prettyprint language-css">#admin .tabbar a {
+  font-weight: bold;
+}
+#demo .overview .fakelink {
+  @extend a;
+}</pre>
 
 <p>While it would technically be possible to generate all selectors that could possibly match either sequence, this would make the stylesheet far too large. The simple example above, for instance, would require ten selectors. Instead, Sass generates only selectors that are likely to be useful.</p>
 
 <p>When the two sequences being merged have no selectors in common, then two new selectors are generated: one with the first sequence before the second, and one with the second sequence before the first. For example:</p>
 
-<pre class="code prettyprint language-css">#admin .tabbar a {font-weight: bold}
-#demo .overview .fakelink {@extend a}</pre>
+<pre class="code prettyprint language-css">#admin .tabbar a {
+  font-weight: bold;
+}
+#demo .overview .fakelink {
+  @extend a;
+}</pre>
 
 <p>is compiled to:</p>
 
@@ -1178,8 +1200,12 @@ a {
 
 <p>If the two sequences do share some selectors, then those selectors will be merged together and only the differences (if any still exist) will alternate. In this example, both sequences contain the id <code>#admin</code>, so the resulting selectors will merge those two ids:</p>
 
-<pre class="code prettyprint language-css">#admin .tabbar a {font-weight: bold}
-#admin .overview .fakelink {@extend a}</pre>
+<pre class="code prettyprint language-css">#admin .tabbar a {
+  font-weight: bold;
+}
+#admin .overview .fakelink {
+  @extend a;
+}</pre>
 
 <p>This is compiled to:</p>
 
@@ -1205,15 +1231,16 @@ a {
 
 <p>However, placeholder selectors can be extended, just like classes and ids. The extended selectors will be generated, but the base placeholder selector will not. For example:</p>
 
-<pre class="code prettyprint language-css">.notice { @extend %extreme; }</pre>
+<pre class="code prettyprint language-css">.notice {
+  @extend %extreme;
+}</pre>
 
 <p>Is compiled to:</p>
 
 <pre class="code prettyprint language-css">#context a.notice {
   color: blue;
   font-weight: bold;
-  font-size: 2em;
-}</pre>
+  font-size: 2em; }</pre>
 
 <h4 id='the__flag'>The <code>!optional</code> Flag</h4>
 
@@ -1542,7 +1569,7 @@ h1 { @include sexy-border($color: blue, $width: 2in); }</pre>
 <pre class="code prettyprint language-css">@mixin box-shadow($shadows...) {
   -moz-box-shadow: $shadows;
   -webkit-box-shadow: $shadows;
-  box-shadow: $shadows;      
+  box-shadow: $shadows;
 }
 
 .shadows {
