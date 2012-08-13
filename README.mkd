@@ -2,30 +2,35 @@
 
 The Sass reference is the most complete documentation for Sass. It contains information on every language feature, all the options, and how to install it as a Rails plugin.
 
-You can currently read it at <http://www.kaelig.fr/bettersassdocs/> (will soon change).
+You can currently read it at <http://www.kaelig.fr/bettersassdocs/>.
 
 This reference is readable on desktop, mobile and tablets.
 
-# Todo
+## Todo
 
 - Move the reference to an other domain
-- Include [indented syntax](http://sass-lang.com/docs/yardoc/file.INDENTED_SYNTAX.html) examples
+- Include [indented syntax](http://sass-lang.com/docs/yardoc/file.INDENTED_SYNTAX.html) examples (maybe one day)
 - Style all pages, especially the [Sass Functions](http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html "Module: Sass::Script::Functions")
 - Build script to auto-update the reference with fresh content every time the Sass gem is updated
 - Rewrite some parts of the reference that may seem too technical for some developers
 - Properties and functions search engine
-- Analytics
 
-# Authors
+## Authors
 
 - [Hampton Catlin](http://hamptoncatlin.com)
 - [Nathan Weizenbaum](http://nex-3.com)
 - [Chris Eppstein](http://chriseppstein.github.com)
 
-# Design
+## “Design” of Better Sass Docs
 
 - [Kaelig](http://www.kaelig.fr)
 
-# Thanks
+## Thanks
 
 - [Paul Irish](https://github.com/paulirish)
+
+## Compiling the project
+
+Install Sass, then open the terminal and run:
+
+`sass --watch s.scss:s.css --compass`
