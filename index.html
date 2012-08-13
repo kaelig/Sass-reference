@@ -24,7 +24,17 @@
   
   <!--  Nice code highlighting  -->
   <script src='prettify.js'></script>
-  
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-7077758-10']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
 <body onload='prettyPrint()'>
 
@@ -34,7 +44,7 @@
         <h1>Sass Reference</h1>
       </div>
 
-      <div class='maruku_toc'><ul style='list-style: none;'><li><a href='#features'>Features</a></li><li><a href='#syntax'>Syntax</a></li><li><a href='#using_sass'>Using Sass</a><ul style='list-style: none;'><li><a href='#rackrailsmerb_plugin'>Rack/Rails/Merb Plugin</a></li><li><a href='#caching'>Caching</a></li><li><a href='#options'>Options</a></li><li><a href='#syntax_selection'>Syntax Selection</a></li><li><a href='#encodings'>Encodings</a><ul style='list-style: none;'><li><a href='#output_encoding'>Output Encoding</a></li></ul></li></ul></li><li><a href='#css_extensions'>CSS Extensions</a><ul style='list-style: none;'><li><a href='#nested_rules'>Nested Rules</a></li><li><a href='#referencing_parent_selectors_'>Referencing Parent Selectors: <code>&amp;</code></a></li><li><a href='#nested_properties'>Nested Properties</a></li></ul></li><li><a href='#comments'>Comments: <code>/* */</code> and <code>//</code></a></li><li><a href='#sassscript'>SassScript</a><ul style='list-style: none;'><li><a href='#interactive_shell'>Interactive Shell</a></li><li><a href='#variables_'>Variables: <code>$</code></a></li><li><a href='#data_types'>Data Types</a><ul style='list-style: none;'><li><a href='#sass-script-strings'>Strings</a></li><li><a href='#lists'>Lists</a></li></ul></li><li><a href='#operations'>Operations</a><ul style='list-style: none;'><li><a href='#number_operations'>Number Operations</a><ul style='list-style: none;'><li><a href='#division-and-slash'>Division and <code>/</code></a></li></ul></li><li><a href='#color_operations'>Color Operations</a></li><li><a href='#string_operations'>String Operations</a></li><li><a href='#boolean_operations'>Boolean Operations</a></li><li><a href='#list_operations'>List Operations</a></li></ul></li><li><a href='#parentheses'>Parentheses</a></li><li><a href='#functions'>Functions</a><ul style='list-style: none;'><li><a href='#keyword_arguments'>Keyword Arguments</a></li></ul></li><li><a href='#interpolation_'>Interpolation: <code>#{}</code></a></li><li><a href='#variable_defaults_'>Variable Defaults: <code>!default</code></a></li></ul></li><li><a href='#directives'><code>@</code>-Rules and Directives</a><ul style='list-style: none;'><li><a href='#import'><code>@import</code></a><ul style='list-style: none;'><li><a href='#partials'>Partials</a></li><li><a href='#nested-import'>Nested <code>@import</code></a></li></ul></li><li><a href='#media'><code>@media</code></a></li><li><a href='#extend'><code>@extend</code></a><ul style='list-style: none;'><li><a href='#how_it_works'>How it Works</a></li><li><a href='#extending_complex_selectors'>Extending Complex Selectors</a></li><li><a href='#multiple_extends'>Multiple Extends</a></li><li><a href='#chaining_extends'>Chaining Extends</a></li><li><a href='#selector_sequences'>Selector Sequences</a><ul style='list-style: none;'><li><a href='#merging_selector_sequences'>Merging Selector Sequences</a></li></ul></li></ul></li><li><a href='#id8'><code>@debug</code></a></li><li><a href='#id9'><code>@warn</code></a></li></ul></li><li><a href='#control_directives'>Control Directives</a><ul style='list-style: none;'><li><a href='#id10'><code>@if</code></a></li><li><a href='#id11'><code>@for</code></a></li><li><a href='#each-directive'><code>@each</code></a></li><li><a href='#id13'><code>@while</code></a></li></ul></li><li><a href='#mixins'>Mixin Directives</a><ul style='list-style: none;'><li><a href='#defining_a_mixin'>Defining a Mixin: <code>@mixin</code></a></li><li><a href='#including_a_mixin'>Including a Mixin: <code>@include</code></a></li><li><a href='#mixin-arguments'>Arguments</a><ul style='list-style: none;'><li><a href='#keyword_arguments'>Keyword Arguments</a></li></ul></li></ul></li><li><a href='#functions'>Function Directives</a></li><li><a href='#output_style'>Output Style</a><ul style='list-style: none;'><li><a href='#id14'><code>:nested</code></a></li><li><a href='#id15'><code>:expanded</code></a></li><li><a href='#id16'><code>:compact</code></a></li><li><a href='#id17'><code>:compressed</code></a></li></ul></li><li><a href='#extending_sass'>Extending Sass</a><ul style='list-style: none;'><li><a href='#defining_custom_sass_functions'>Defining Custom Sass Functions</a></li><li><a href='#cache_stores'>Cache Stores</a></li><li><a href='#custom_importers'>Custom Importers</a></li></ul></li></ul></div>
+      <div class='maruku_toc'><ul><li><a href='#features'>Features</a></li><li><a href='#syntax'>Syntax</a></li><li><a href='#using_sass'>Using Sass</a><ul><li><a href='#rackrailsmerb_plugin'>Rack/Rails/Merb Plugin</a></li><li><a href='#caching'>Caching</a></li><li><a href='#options'>Options</a></li><li><a href='#syntax_selection'>Syntax Selection</a></li><li><a href='#encodings'>Encodings</a><ul><li><a href='#output_encoding'>Output Encoding</a></li></ul></li></ul></li><li><a href='#css_extensions'>CSS Extensions</a><ul><li><a href='#nested_rules'>Nested Rules</a></li><li><a href='#referencing_parent_selectors_'>Referencing Parent Selectors: <code>&amp;</code></a></li><li><a href='#nested_properties'>Nested Properties</a></li><li><a href='#placeholder_selectors_'>Placeholder Selectors: <code>%foo</code></a></li></ul></li><li><a href='#comments'>Comments: <code>/* */</code> and <code>//</code></a></li><li><a href='#sassscript'>SassScript</a><ul><li><a href='#interactive_shell'>Interactive Shell</a></li><li><a href='#variables_'>Variables: <code>$</code></a></li><li><a href='#data_types'>Data Types</a><ul><li><a href='#sass-script-strings'>Strings</a></li><li><a href='#lists'>Lists</a></li></ul></li><li><a href='#operations'>Operations</a><ul><li><a href='#number_operations'>Number Operations</a><ul><li><a href='#division-and-slash'>Division and <code>/</code></a></li></ul></li><li><a href='#color_operations'>Color Operations</a></li><li><a href='#string_operations'>String Operations</a></li><li><a href='#boolean_operations'>Boolean Operations</a></li><li><a href='#list_operations'>List Operations</a></li></ul></li><li><a href='#parentheses'>Parentheses</a></li><li><a href='#functions'>Functions</a><ul><li><a href='#keyword_arguments'>Keyword Arguments</a></li></ul></li><li><a href='#interpolation_'>Interpolation: <code>#{}</code></a></li><li><a href='#variable_defaults_'>Variable Defaults: <code>!default</code></a></li></ul></li><li><a href='#directives'><code>@</code>-Rules and Directives</a><ul><li><a href='#import'><code>@import</code></a><ul><li><a href='#partials'>Partials</a></li><li><a href='#nested-import'>Nested <code>@import</code></a></li></ul></li><li><a href='#media'><code>@media</code></a></li><li><a href='#extend'><code>@extend</code></a><ul><li><a href='#how_it_works'>How it Works</a></li><li><a href='#extending_complex_selectors'>Extending Complex Selectors</a></li><li><a href='#multiple_extends'>Multiple Extends</a></li><li><a href='#chaining_extends'>Chaining Extends</a></li><li><a href='#selector_sequences'>Selector Sequences</a><ul><li><a href='#merging_selector_sequences'>Merging Selector Sequences</a></li></ul></li><li><a href='#placeholders'><code>@extend</code>-Only Selectors</a></li><li><a href='#the__flag'>The <code>!optional</code> Flag</a></li><li><a href='#_in_directives'><code>@extend</code> in Directives</a></li></ul></li><li><a href='#id8'><code>@debug</code></a></li><li><a href='#id9'><code>@warn</code></a></li></ul></li><li><a href='#control_directives'>Control Directives</a><ul><li><a href='#id10'><code>@if</code></a></li><li><a href='#id11'><code>@for</code></a></li><li><a href='#each-directive'><code>@each</code></a></li><li><a href='#id13'><code>@while</code></a></li></ul></li><li><a href='#mixins'>Mixin Directives</a><ul><li><a href='#defining_a_mixin'>Defining a Mixin: <code>@mixin</code></a></li><li><a href='#including_a_mixin'>Including a Mixin: <code>@include</code></a></li><li><a href='#mixin-arguments'>Arguments</a><ul><li><a href='#keyword_arguments'>Keyword Arguments</a></li><li><a href='#variable_arguments'>Variable Arguments</a></li></ul></li><li><a href='#mixin-content'>Passing Content Blocks to a Mixin</a><ul><li><a href='#variable_scope_and_content_blocks'>Variable Scope and Content Blocks</a></li></ul></li></ul></li><li><a href='#function_directives'>Function Directives</a></li><li><a href='#output_style'>Output Style</a><ul><li><a href='#id14'><code>:nested</code></a></li><li><a href='#id15'><code>:expanded</code></a></li><li><a href='#id16'><code>:compact</code></a></li><li><a href='#id17'><code>:compressed</code></a></li></ul></li><li><a href='#extending_sass'>Extending Sass</a><ul><li><a href='#defining_custom_sass_functions'>Defining Custom Sass Functions</a></li><li><a href='#cache_stores'>Cache Stores</a></li><li><a href='#custom_importers'>Custom Importers</a></li></ul></li></ul></div>
       <div id='intro'>
         <p>Sass is an extension of CSS that adds power and elegance to the basic language. It allows you to use <a href='#variables_'>variables</a>, <a href='#nested_rules'>nested rules</a>, <a href='#mixins'>mixins</a>, <a href='#import'>inline imports</a>, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized, and get small stylesheets up and running quickly, particularly with the help of <a href='http://compass-style.org'>the Compass style library</a>.</p>
         <p>
@@ -50,7 +60,7 @@
 
 <li>Language extensions such as variables, nesting, and mixins</li>
 
-<li>Many <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html' title='Sass::Script::Functions (module)'>useful functions</a></tt> for manipulating colors and other values</li>
+<li>Many <tt><a href="Sass/Script/Functions.html" title="Sass::Script::Functions (module)">useful functions</a></tt> for manipulating colors and other values</li>
 
 <li>Advanced features like <a href='#control_directives'>control directives</a> for libraries</li>
 
@@ -59,16 +69,15 @@
 <li><a href='https://addons.mozilla.org/en-US/firefox/addon/103988'>Firebug integration</a></li>
 </ul>
 
-
 <h2 id='syntax'>Syntax</h2>
 
 <p>There are two syntaxes available for Sass. The first, known as SCSS (Sassy CSS) and used throughout this reference, is an extension of the syntax of CSS3. This means that every valid CSS3 stylesheet is a valid SCSS file with the same meaning. In addition, SCSS understands most CSS hacks and vendor-specific syntax, such as <a href='http://msdn.microsoft.com/en-us/library/ms533754%28VS.85%29.aspx'>IE&#8217;s old <code>filter</code> syntax</a>. This syntax is enhanced with the Sass features described below. Files using this syntax have the <code>.scss</code> extension.</p>
 
-<p>The second and older syntax, known as the indented syntax (or sometimes just &#8220;Sass&#8221;), provides a more concise way of writing CSS. It uses indentation rather than brackets to indicate nesting of selectors, and newlines rather than semicolons to separate properties. Some people find this to be easier to read and quicker to write than SCSS. The indented syntax has all the same features, although some of them have slightly different syntax; this is described in <a href='http://sass-lang.com/docs/yardoc/file.INDENTED_SYNTAX.html' title='the indented syntax reference'>the indented syntax reference</a>. Files using this syntax have the <code>.sass</code> extension.</p>
+<p>The second and older syntax, known as the indented syntax (or sometimes just &#8220;Sass&#8221;), provides a more concise way of writing CSS. It uses indentation rather than brackets to indicate nesting of selectors, and newlines rather than semicolons to separate properties. Some people find this to be easier to read and quicker to write than SCSS. The indented syntax has all the same features, although some of them have slightly different syntax; this is described in <a href="file.INDENTED_SYNTAX.html" title="the indented syntax reference">the indented syntax reference</a>. Files using this syntax have the <code>.sass</code> extension.</p>
 
 <p>Either syntax can <a href='#import'>import</a> files written in the other. Files can be automatically converted from one syntax to the other using the <code>sass-convert</code> command line tool:</p>
 
-<pre class='code'># Convert Sass to SCSS
+<pre class="code"># Convert Sass to SCSS
 $ sass-convert style.sass style.scss
 
 # Convert SCSS to Sass
@@ -78,46 +87,46 @@ $ sass-convert style.scss style.sass</pre>
 
 <p>Sass can be used in three ways: as a command-line tool, as a standalone Ruby module, and as a plugin for any Rack-enabled framework, including Ruby on Rails and Merb. The first step for all of these is to install the Sass gem:</p>
 
-<pre class='code'>gem install sass</pre>
+<pre class="code">gem install sass</pre>
 
 <p>If you&#8217;re using Windows, you may need to <a href='http://rubyinstaller.org/download.html'>install Ruby</a> first.</p>
 
 <p>To run Sass from the command line, just use</p>
 
-<pre class='code'>sass input.scss output.css</pre>
+<pre class="code">sass input.scss output.css</pre>
 
 <p>You can also tell Sass to watch the file and update the CSS every time the Sass file changes:</p>
 
-<pre class='code'>sass --watch input.scss:output.css</pre>
+<pre class="code">sass --watch input.scss:output.css</pre>
 
 <p>If you have a directory with many Sass files, you can also tell Sass to watch the entire directory:</p>
 
-<pre class='code'>sass --watch app/sass:public/stylesheets</pre>
+<pre class="code">sass --watch app/sass:public/stylesheets</pre>
 
 <p>Use <code>sass --help</code> for full documentation.</p>
 
-<p>Using Sass in Ruby code is very simple. After installing the Sass gem, you can use it by running <code>require &quot;sass&quot;</code> and using <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Engine.html' title='Sass::Engine (class)'>Sass::Engine</a></tt> like so:</p>
+<p>Using Sass in Ruby code is very simple. After installing the Sass gem, you can use it by running <code>require &quot;sass&quot;</code> and using <tt><a href="Sass/Engine.html" title="Sass::Engine (class)">Sass::Engine</a></tt> like so:</p>
 
-<pre class='code'>engine = Sass::Engine.new(&quot;#main {background-color: #0000ff}&quot;, :syntax =&gt; :scss)
+<pre class="code">engine = Sass::Engine.new(&quot;#main {background-color: #0000ff}&quot;, :syntax =&gt; :scss)
 engine.render #=&gt; &quot;#main { background-color: #0000ff; }\n&quot;</pre>
 
 <h3 id='rackrailsmerb_plugin'>Rack/Rails/Merb Plugin</h3>
 
 <p>To enable Sass in Rails versions before Rails 3, add the following line to <code>environment.rb</code>:</p>
 
-<pre class='code'>config.gem &quot;sass&quot;</pre>
+<pre class="code">config.gem &quot;sass&quot;</pre>
 
 <p>For Rails 3, instead add the following line to the Gemfile:</p>
 
-<pre class='code'>gem &quot;sass&quot;</pre>
+<pre class="code">gem &quot;sass&quot;</pre>
 
 <p>To enable Sass in Merb, add the following line to <code>config/dependencies.rb</code>:</p>
 
-<pre class='code'>dependency &quot;merb-haml&quot;</pre>
+<pre class="code">dependency &quot;merb-haml&quot;</pre>
 
 <p>To enable Sass in a Rack application, add</p>
 
-<pre class='code'>require &#39;sass/plugin/rack&#39;
+<pre class="code">require &#39;sass/plugin/rack&#39;
 use Sass::Plugin::Rack</pre>
 
 <p>to <code>config.ru</code>.</p>
@@ -132,15 +141,15 @@ use Sass::Plugin::Rack</pre>
 
 <h3 id='options'>Options</h3>
 
-<p>Options can be set by setting the <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Plugin/Configuration.html#options-instance_method' title='Sass::Plugin::Configuration#options (method)'>Sass::Plugin#options</a></tt> hash in <code>environment.rb</code> in Rails or <code>config.ru</code> in Rack&#8230;</p>
+<p>Options can be set by setting the <tt><a href="Sass/Plugin/Configuration.html#options-instance_method" title="Sass::Plugin::Configuration#options (method)">Sass::Plugin#options</a></tt> hash in <code>environment.rb</code> in Rails or <code>config.ru</code> in Rack&#8230;</p>
 
-<pre class='code'>Sass::Plugin.options[:style] = :compact</pre>
+<pre class="code">Sass::Plugin.options[:style] = :compact</pre>
 
 <p>&#8230;or by setting the <code>Merb::Plugin.config[:sass]</code> hash in <code>init.rb</code> in Merb&#8230;</p>
 
-<pre class='code'>Merb::Plugin.config[:sass][:style] = :compact</pre>
+<pre class="code">Merb::Plugin.config[:sass][:style] = :compact</pre>
 
-<p>&#8230;or by passing an options hash to <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Engine.html#initialize-instance_method' title='Sass::Engine#initialize (method)'>Sass::Engine#initialize</a></tt>. All relevant options are also available via flags to the <code>sass</code> and <code>scss</code> command-line executables. Available options are:</p>
+<p>&#8230;or by passing an options hash to <tt><a href="Sass/Engine.html#initialize-instance_method" title="Sass::Engine#initialize (method)">Sass::Engine#initialize</a></tt>. All relevant options are also available via flags to the <code>sass</code> and <code>scss</code> command-line executables. Available options are:</p>
 
 <dl>
 <dt id='style-option'> <code>:style</code></dt>
@@ -149,7 +158,7 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='syntax-option'> <code>:syntax</code></dt>
 
-<dd>The syntax of the input file, <code>:sass</code> for the indented syntax and <code>:scss</code> for the CSS-extension syntax. This is only useful when you&#8217;re constructing <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Engine.html' title='Sass::Engine (class)'>Sass::Engine</a></tt> instances yourself; it&#8217;s automatically set properly when using <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Plugin.html' title='Sass::Plugin (module)'>Sass::Plugin</a></tt>. Defaults to <code>:sass</code>.</dd>
+<dd>The syntax of the input file, <code>:sass</code> for the indented syntax and <code>:scss</code> for the CSS-extension syntax. This is only useful when you&#8217;re constructing <tt><a href="Sass/Engine.html" title="Sass::Engine (class)">Sass::Engine</a></tt> instances yourself; it&#8217;s automatically set properly when using <tt><a href="Sass/Plugin.html" title="Sass::Plugin (module)">Sass::Plugin</a></tt>. Defaults to <code>:sass</code>.</dd>
 
 <dt id='property_syntax-option'> <code>:property_syntax</code></dt>
 
@@ -165,7 +174,7 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='cache_store-option'> <code>:cache_store</code></dt>
 
-<dd>If this is set to an instance of a subclass of <tt><a href='http://sass-lang.com/docs/yardoc/Sass/CacheStores/Base.html' title='Sass::CacheStores::Base (class)'>Sass::CacheStores::Base</a></tt>, that cache store will be used to store and retrieve cached compilation results. Defaults to a <tt><a href='http://sass-lang.com/docs/yardoc/Sass/CacheStores/Filesystem.html' title='Sass::CacheStores::Filesystem (class)'>Sass::CacheStores::Filesystem</a></tt> that is initialized using the <a href='#cache_location-option'><code>:cache_location</code> option</a>.</dd>
+<dd>If this is set to an instance of a subclass of <tt><a href="Sass/CacheStores/Base.html" title="Sass::CacheStores::Base (class)">Sass::CacheStores::Base</a></tt>, that cache store will be used to store and retrieve cached compilation results. Defaults to a <tt><a href="Sass/CacheStores/Filesystem.html" title="Sass::CacheStores::Filesystem (class)">Sass::CacheStores::Filesystem</a></tt> that is initialized using the <a href='#cache_location-option'><code>:cache_location</code> option</a>.</dd>
 
 <dt id='never_update-option'> <code>:never_update</code></dt>
 
@@ -185,7 +194,7 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='template_location-option'> <code>:template_location</code></dt>
 
-<dd>A path to the root sass template directory for your application. If a hash, <code>:css_location</code> is ignored and this option designates a mapping between input and output directories. May also be given a list of 2-element lists, instead of a hash. Defaults to <code>css_location + &quot;/sass&quot;</code>. Only has meaning within Rack, Ruby on Rails, or Merb. Note that if multiple template locations are specified, all of them are placed in the import path, allowing you to import between them. <strong>Note that due to the many possible formats it can take, this option should only be set directly, not accessed or modified. Use the <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Plugin/Configuration.html#template_location_array-instance_method' title='Sass::Plugin::Configuration#template_location_array (method)'>Sass::Plugin#template_location_array</a></tt>, <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Plugin/Configuration.html#add_template_location-instance_method' title='Sass::Plugin::Configuration#add_template_location (method)'>Sass::Plugin#add_template_location</a></tt>, and <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Plugin/Configuration.html#remove_template_location-instance_method' title='Sass::Plugin::Configuration#remove_template_location (method)'>Sass::Plugin#remove_template_location</a></tt> methods instead</strong>.</dd>
+<dd>A path to the root sass template directory for your application. If a hash, <code>:css_location</code> is ignored and this option designates a mapping between input and output directories. May also be given a list of 2-element lists, instead of a hash. Defaults to <code>css_location + &quot;/sass&quot;</code>. Only has meaning within Rack, Ruby on Rails, or Merb. Note that if multiple template locations are specified, all of them are placed in the import path, allowing you to import between them. <strong>Note that due to the many possible formats it can take, this option should only be set directly, not accessed or modified. Use the <tt><a href="Sass/Plugin/Configuration.html#template_location_array-instance_method" title="Sass::Plugin::Configuration#template_location_array (method)">Sass::Plugin#template_location_array</a></tt>, <tt><a href="Sass/Plugin/Configuration.html#add_template_location-instance_method" title="Sass::Plugin::Configuration#add_template_location (method)">Sass::Plugin#add_template_location</a></tt>, and <tt><a href="Sass/Plugin/Configuration.html#remove_template_location-instance_method" title="Sass::Plugin::Configuration#remove_template_location (method)">Sass::Plugin#remove_template_location</a></tt> methods instead</strong>.</dd>
 
 <dt id='css_location-option'> <code>:css_location</code></dt>
 
@@ -197,7 +206,7 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='unix_newlines-option'> <code>:unix_newlines</code></dt>
 
-<dd>If true, use Unix-style newlines when writing files. Only has meaning on Windows, and only when Sass is writing the files (in Rack, Rails, or Merb, when using <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Plugin.html' title='Sass::Plugin (module)'>Sass::Plugin</a></tt> directly, or when using the command-line executable).</dd>
+<dd>If true, use Unix-style newlines when writing files. Only has meaning on Windows, and only when Sass is writing the files (in Rack, Rails, or Merb, when using <tt><a href="Sass/Plugin.html" title="Sass::Plugin (module)">Sass::Plugin</a></tt> directly, or when using the command-line executable).</dd>
 
 <dt id='filename-option'> <code>:filename</code></dt>
 
@@ -209,11 +218,11 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='load_paths-option'> <code>:load_paths</code></dt>
 
-<dd>An array of filesystem paths or importers which should be searched for Sass templates imported with the <a href='#import'><code>@import</code></a> directive. These may be strings, <code>Pathname</code> objects, or subclasses of <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Importers/Base.html' title='Sass::Importers::Base (class)'>Sass::Importers::Base</a></tt>. This defaults to the working directory and, in Rack, Rails, or Merb, whatever <code>:template_location</code> is.</dd>
+<dd>An array of filesystem paths or importers which should be searched for Sass templates imported with the <a href='#import'><code>@import</code></a> directive. These may be strings, <code>Pathname</code> objects, or subclasses of <tt><a href="Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt>. This defaults to the working directory and, in Rack, Rails, or Merb, whatever <code>:template_location</code> is. The load path is also informed by <tt><a href="Sass.html#load_paths-class_method" title="Sass.load_paths (method)">Sass.load_paths</a></tt> and the <code>SASS_PATH</code> environment variable.</dd>
 
 <dt id='filesystem_importer-option'> <code>:filesystem_importer</code></dt>
 
-<dd>A <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Importers/Base.html' title='Sass::Importers::Base (class)'>Sass::Importers::Base</a></tt> subclass used to handle plain string load paths. This should import files from the filesystem. It should be a Class object inheriting from <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Importers/Base.html' title='Sass::Importers::Base (class)'>Sass::Importers::Base</a></tt> with a constructor that takes a single string argument (the load path). Defaults to <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Importers/Filesystem.html' title='Sass::Importers::Filesystem (class)'>Sass::Importers::Filesystem</a></tt>.</dd>
+<dd>A <tt><a href="Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt> subclass used to handle plain string load paths. This should import files from the filesystem. It should be a Class object inheriting from <tt><a href="Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt> with a constructor that takes a single string argument (the load path). Defaults to <tt><a href="Sass/Importers/Filesystem.html" title="Sass::Importers::Filesystem (class)">Sass::Importers::Filesystem</a></tt>.</dd>
 
 <dt id='line_numbers-option'> <code>:line_numbers</code></dt>
 
@@ -229,7 +238,7 @@ use Sass::Plugin::Rack</pre>
 
 <dt id='custom-option'> <code>:custom</code></dt>
 
-<dd>An option that&#8217;s available for individual applications to set to make data available to <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html' title='Sass::Script::Functions (module)'>custom Sass functions</a></tt>.</dd>
+<dd>An option that&#8217;s available for individual applications to set to make data available to <tt><a href="Sass/Script/Functions.html" title="Sass::Script::Functions (module)">custom Sass functions</a></tt>.</dd>
 
 <dt id='quiet-option'> <code>:quiet</code></dt>
 
@@ -262,7 +271,7 @@ use Sass::Plugin::Rack</pre>
 
 <p>Sass allows CSS rules to be nested within one another. The inner rule then only applies within the outer rule&#8217;s selector. For example:</p>
 
-<pre class='code prettyprint language-css'>#main p {
+<pre class="code prettyprint language-css">#main p {
   color: #00ff00;
   width: 97%;
 
@@ -274,7 +283,7 @@ use Sass::Plugin::Rack</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>#main p {
+<pre class="code prettyprint language-css">#main p {
   color: #00ff00;
   width: 97%; }
   #main p .redbox {
@@ -283,7 +292,7 @@ use Sass::Plugin::Rack</pre>
 
 <p>This helps avoid repetition of parent selectors, and makes complex CSS layouts with lots of nested selectors much simpler. For example:</p>
 
-<pre class='code prettyprint language-css'>#main {
+<pre class="code prettyprint language-css">#main {
   width: 97%;
 
   p, div {
@@ -296,7 +305,7 @@ use Sass::Plugin::Rack</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>#main {
+<pre class="code prettyprint language-css">#main {
   width: 97%; }
   #main p, #main div {
     font-size: 2em; }
@@ -309,7 +318,7 @@ use Sass::Plugin::Rack</pre>
 
 <p>Sometimes it&#8217;s useful to use a nested rule&#8217;s parent selector in other ways than the default. For instance, you might want to have special styles for when that selector is hovered over or for when the body element has a certain class. In these cases, you can explicitly specify where the parent selector should be inserted using the <code>&amp;</code> character. For example:</p>
 
-<pre class='code prettyprint language-css'>a {
+<pre class="code prettyprint language-css">a {
   font-weight: bold;
   text-decoration: none;
   &amp;:hover { text-decoration: underline; }
@@ -318,7 +327,7 @@ use Sass::Plugin::Rack</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>a {
+<pre class="code prettyprint language-css">a {
   font-weight: bold;
   text-decoration: none; }
   a:hover {
@@ -328,7 +337,7 @@ use Sass::Plugin::Rack</pre>
 
 <p><code>&amp;</code> will be replaced with the parent selector as it appears in the CSS. This means that if you have a deeply nested rule, the parent selector will be fully resolved before the <code>&amp;</code> is replaced. For example:</p>
 
-<pre class='code prettyprint language-css'>#main {
+<pre class="code prettyprint language-css">#main {
   color: black;
   a {
     font-weight: bold;
@@ -338,7 +347,7 @@ use Sass::Plugin::Rack</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>#main {
+<pre class="code prettyprint language-css">#main {
   color: black; }
   #main a {
     font-weight: bold; }
@@ -349,7 +358,7 @@ use Sass::Plugin::Rack</pre>
 
 <p>CSS has quite a few properties that are in &#8220;namespaces;&#8221; for instance, <code>font-family</code>, <code>font-size</code>, and <code>font-weight</code> are all in the <code>font</code> namespace. In CSS, if you want to set a bunch of properties in the same namespace, you have to type it out each time. Sass provides a shortcut for this: just write the namespace once, then nest each of the sub-properties within it. For example:</p>
 
-<pre class='code prettyprint language-css'>.funky {
+<pre class="code prettyprint language-css">.funky {
   font: {
     family: fantasy;
     size: 30em;
@@ -359,14 +368,14 @@ use Sass::Plugin::Rack</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>.funky {
+<pre class="code prettyprint language-css">.funky {
   font-family: fantasy;
   font-size: 30em;
   font-weight: bold; }</pre>
 
 <p>The property namespace itself can also have a value. For example:</p>
 
-<pre class='code prettyprint language-css'>.funky {
+<pre class="code prettyprint language-css">.funky {
   font: 2px/3px {
     family: fantasy;
     size: 30em;
@@ -376,17 +385,23 @@ use Sass::Plugin::Rack</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>.funky {
+<pre class="code prettyprint language-css">.funky {
   font: 2px/3px;
     font-family: fantasy;
     font-size: 30em;
     font-weight: bold; }</pre>
 
+<h3 id='placeholder_selectors_'>Placeholder Selectors: <code>%foo</code></h3>
+
+<p>Sass supports a special type of selector called a &#8220;placeholder selector&#8221;. These look like class and id selectors, except the <code>#</code> or <code>.</code> is replaced by <code>%</code>. They&#8217;re meant to be used with the <a href='#extend'><code>@extend</code> directive</a>; for more information see <a href='#placeholders'><code>@extend</code>-Only Selectors</a>.</p>
+
+<p>On their own, without any use of <code>@extend</code>, rulesets that use placeholder selectors will not be rendered to CSS.</p>
+
 <h2 id='comments'>Comments: <code>/* */</code> and <code>//</code></h2>
 
 <p>Sass supports standard multiline CSS comments with <code>/* */</code>, as well as single-line comments with <code>//</code>. The multiline comments are preserved in the CSS output where possible, while the single-line comments are removed. For example:</p>
 
-<pre class='code prettyprint language-css'>/* This comment is
+<pre class="code prettyprint language-css">/* This comment is
  * several lines long.
  * since it uses the CSS comment syntax,
  * it will appear in the CSS output. */
@@ -399,7 +414,7 @@ a { color: green; }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>/* This comment is
+<pre class="code prettyprint language-css">/* This comment is
  * several lines long.
  * since it uses the CSS comment syntax,
  * it will appear in the CSS output. */
@@ -421,7 +436,7 @@ a {
 
 <p>You can easily experiment with SassScript using the interactive shell. To launch the shell run the sass command-line with the <code>-i</code> option. At the prompt, enter any legal SassScript expression to have it evaluated and the result printed out for you:</p>
 
-<pre class='code'>$ sass -i
+<pre class="code">$ sass -i
 &gt;&gt; &quot;Hello, Sassy World!&quot;
 &quot;Hello, Sassy World!&quot;
 &gt;&gt; 1px + 1px + 1px
@@ -435,11 +450,11 @@ white</pre>
 
 <p>The most straightforward way to use SassScript is to use variables. Variables begin with dollar signs, and are set like CSS properties:</p>
 
-<pre class='code prettyprint language-css'>$width: 5em;</pre>
+<pre class="code prettyprint language-css">$width: 5em;</pre>
 
 <p>You can then refer to them in properties:</p>
 
-<pre class='code prettyprint language-css'>#main {
+<pre class="code prettyprint language-css">#main {
   width: $width;
 }</pre>
 
@@ -451,7 +466,7 @@ white</pre>
 
 <h3 id='data_types'>Data Types</h3>
 
-<p>SassScript supports four main data types:</p>
+<p>SassScript supports six main data types:</p>
 
 <ul>
 <li>numbers (e.g. <code>1.2</code>, <code>13</code>, <code>10px</code>)</li>
@@ -461,6 +476,8 @@ white</pre>
 <li>colors (e.g. <code>blue</code>, <code>#04a3f9</code>, <code>rgba(255, 0, 0, 0.5)</code>)</li>
 
 <li>booleans (e.g. <code>true</code>, <code>false</code>)</li>
+
+<li>nulls (e.g. <code>null</code>)</li>
 
 <li>lists of values, separated by spaces or commas (e.g. <code>1.5em 1em 0 2em</code>, <code>Helvetica, Arial, sans-serif</code>)</li>
 </ul>
@@ -473,7 +490,7 @@ white</pre>
 
 <p>There is one exception to this, though: when using <a href='#interpolation_'><code>#{}</code> interpolation</a>, quoted strings are unquoted. This makes it easier to use e.g. selector names in <a href='#mixins'>mixins</a>. For example:</p>
 
-<pre class='code prettyprint language-css'>@mixin firefox-message($selector) {
+<pre class="code prettyprint language-css">@mixin firefox-message($selector) {
   body.firefox #{$selector}:before {
     content: &quot;Hi, Firefox users!&quot;; } }
 
@@ -481,7 +498,7 @@ white</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>body.firefox .header:before {
+<pre class="code prettyprint language-css">body.firefox .header:before {
   content: &quot;Hi, Firefox users!&quot;; }</pre>
 
 <p>It&#8217;s also worth noting that when using the <a href='#sassscript'>deprecated <code>=</code> property syntax</a>, all strings are interpreted as unquoted, regardless of whether or not they&#8217;re written with quotes.</p>
@@ -490,13 +507,13 @@ white</pre>
 
 <p>Lists are how Sass represents the values of CSS declarations like <code>margin: 10px 15px 0 0</code> or <code>font-face: Helvetica, Arial, sans-serif</code>. Lists are just a series of other values, separated by either spaces or commas. In fact, individual values count as lists, too: they&#8217;re just lists with one item.</p>
 
-<p>On their own, lists don&#8217;t do much, but the <a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#list-functions'>Sass list functions</a> make them useful. The <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#nth-instance_method' title='Sass::Script::Functions#nth (method)'>nth function</a></tt> can access items in a list, the <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#join-instance_method' title='Sass::Script::Functions#join (method)'>join function</a></tt> can join multiple lists together, and the <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#append-instance_method' title='Sass::Script::Functions#append (method)'>append function</a></tt> can add items to lists. The <a href='#each-directive'><code>@each</code> rule</a> can also add styles for each item in a list.</p>
+<p>On their own, lists don&#8217;t do much, but the <a href='Sass/Script/Functions.html#list-functions'>Sass list functions</a> make them useful. The <tt><a href="Sass/Script/Functions.html#nth-instance_method" title="Sass::Script::Functions#nth (method)">nth function</a></tt> can access items in a list, the <tt><a href="Sass/Script/Functions.html#join-instance_method" title="Sass::Script::Functions#join (method)">join function</a></tt> can join multiple lists together, and the <tt><a href="Sass/Script/Functions.html#append-instance_method" title="Sass::Script::Functions#append (method)">append function</a></tt> can add items to lists. The <a href='#each-directive'><code>@each</code> rule</a> can also add styles for each item in a list.</p>
 
 <p>In addition to containing simple values, lists can contain other lists. For example, <code>1px 2px, 5px 6px</code> is a two-item list containing the list <code>1px 2px</code> and the list <code>5px 6px</code>. If the inner lists have the same separator as the outer list, you&#8217;ll need to use parentheses to make it clear where the inner lists start and stop. For example, <code>(1px 2px) (5px 6px)</code> is also a two-item list containing the list <code>1px 2px</code> and the list <code>5px 6px</code>. The difference is that the outer list is space-separated, where before it was comma-separated.</p>
 
 <p>When lists are turned into plain CSS, Sass doesn&#8217;t add any parentheses, since CSS doesn&#8217;t understand them. That means that <code>(1px 2px) (5px 6px)</code> and <code>1px 2px 5px 6px</code> will look the same when they become CSS. However, they aren&#8217;t the same when they&#8217;re Sass: the first is a list containing two lists, while the second is a list containing four numbers.</p>
 
-<p>Lists can also have no items in them at all. These lists are represented as <code>()</code>. They can&#8217;t be output directly to CSS; if you try to do e.g. <code>font-family: ()</code>, Sass will raise an error. If a list contains empty lists, as in <code>1px 2px () 3px</code>, the empty list will be removed before it&#8217;s turned into CSS.</p>
+<p>Lists can also have no items in them at all. These lists are represented as <code>()</code>. They can&#8217;t be output directly to CSS; if you try to do e.g. <code>font-family: ()</code>, Sass will raise an error. If a list contains empty lists or null values, as in <code>1px 2px () 3px</code> or <code>1px 2px null 3px</code>, the empty lists and null values will be removed before the containing list is turned into CSS.</p>
 
 <h3 id='operations'>Operations</h3>
 
@@ -506,13 +523,13 @@ white</pre>
 
 <p>SassScript supports the standard arithmetic operations on numbers (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>), and will automatically convert between units if it can:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   width: 1in + 8pt;
 }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   width: 1.111in; }</pre>
 
 <p>Relational operators (<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>) are also supported for numbers, and equality operators (<code>==</code>, <code>!=</code>) are supported for all types.</p>
@@ -533,7 +550,7 @@ white</pre>
 
 <p>For example:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   font: 10px/8px;             // Plain CSS, no division
   $width: 1000px;
   width: $width/2;            // Uses a variable, does division
@@ -543,7 +560,7 @@ white</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   font: 10px/8px;
   width: 500px;
   height: 250px;
@@ -551,7 +568,7 @@ white</pre>
 
 <p>If you want to use variables along with a plain CSS <code>/</code>, you can use <code>#{}</code> to insert them. For example:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   $font-size: 12px;
   $line-height: 30px;
   font: #{$font-size}/#{$line-height};
@@ -559,7 +576,7 @@ white</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   font: 12px/30px;
 }</pre>
 
@@ -567,98 +584,124 @@ white</pre>
 
 <p>All arithmetic operations are supported for color values, where they work piecewise. This means that the operation is performed on the red, green, and blue components in turn. For example:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: #010203 + #040506;
 }</pre>
 
 <p>computes <code>01 + 04 = 05</code>, <code>02 + 05 = 07</code>, and <code>03 + 06 = 09</code>, and is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: #050709; }</pre>
 
-<p>Often it&#8217;s more useful to use <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html' title='Sass::Script::Functions (module)'>color functions</a></tt> than to try to use color arithmetic to achieve the same effect.</p>
+<p>Often it&#8217;s more useful to use <tt><a href="Sass/Script/Functions.html" title="Sass::Script::Functions (module)">color functions</a></tt> than to try to use color arithmetic to achieve the same effect.</p>
 
 <p>Arithmetic operations also work between numbers and colors, also piecewise. For example:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: #010203 * 2;
 }</pre>
 
 <p>computes <code>01 * 2 = 02</code>, <code>02 * 2 = 04</code>, and <code>03 * 2 = 06</code>, and is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: #020406; }</pre>
 
-<p>Note that colors with an alpha channel (those created with the <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#rgba-instance_method' title='Sass::Script::Functions#rgba (method)'>rgba</a></tt> or <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#hsla-instance_method' title='Sass::Script::Functions#hsla (method)'>hsla</a></tt> functions) must have the same alpha value in order for color arithmetic to be done with them. The arithmetic doesn&#8217;t affect the alpha value. For example:</p>
+<p>Note that colors with an alpha channel (those created with the <tt><a href="Sass/Script/Functions.html#rgba-instance_method" title="Sass::Script::Functions#rgba (method)">rgba</a></tt> or <tt><a href="Sass/Script/Functions.html#hsla-instance_method" title="Sass::Script::Functions#hsla (method)">hsla</a></tt> functions) must have the same alpha value in order for color arithmetic to be done with them. The arithmetic doesn&#8217;t affect the alpha value. For example:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: rgba(255, 0, 0, 0.75) + rgba(0, 255, 0, 0.75);
 }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: rgba(255, 255, 0, 0.75); }</pre>
 
-<p>The alpha channel of a color can be adjusted using the <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#opacify-instance_method' title='Sass::Script::Functions#opacify (method)'>opacify</a></tt> and <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#transparentize-instance_method' title='Sass::Script::Functions#transparentize (method)'>transparentize</a></tt> functions. For example:</p>
+<p>The alpha channel of a color can be adjusted using the <tt><a href="Sass/Script/Functions.html#opacify-instance_method" title="Sass::Script::Functions#opacify (method)">opacify</a></tt> and <tt><a href="Sass/Script/Functions.html#transparentize-instance_method" title="Sass::Script::Functions#transparentize (method)">transparentize</a></tt> functions. For example:</p>
 
-<pre class='code prettyprint language-css'>$translucent-red: rgba(255, 0, 0, 0.5);
+<pre class="code prettyprint language-css">$translucent-red: rgba(255, 0, 0, 0.5);
 p {
-  color: opacify($translucent-red, 0.8);
-  background-color: transparentize($translucent-red, 50%);
+  color: opacify($translucent-red, 0.3);
+  background-color: transparentize($translucent-red, 0.25);
 }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: rgba(255, 0, 0, 0.9);
   background-color: rgba(255, 0, 0, 0.25); }</pre>
+
+<p>IE filters require all colors include the alpha layer, and be in the strict format of #AABBCCDD. You can more easily convert the color using the <tt><a href="Sass/Script/Functions.html#ie_hex_str-instance_method" title="Sass::Script::Functions#ie_hex_str (method)">ie_hex_str</a></tt> function. For example:</p>
+
+<pre class="code prettyprint language-css">$translucent-red: rgba(255, 0, 0, 0.5);
+$green: #00ff00;
+div {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=&#39;false&#39;, startColorstr=&#39;#{ie-hex-str($green)}&#39;, endColorstr=&#39;#{ie-hex-str($translucent-red)}&#39;);
+}</pre>
+
+<p>is compiled to:</p>
+
+<pre class="code prettyprint language-css">div {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=&#39;false&#39;, startColorstr=#FF00FF00, endColorstr=#80FF0000);
+}</pre>
 
 <h4 id='string_operations'>String Operations</h4>
 
 <p>The <code>+</code> operation can be used to concatenate strings:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   cursor: e + -resize;
 }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   cursor: e-resize; }</pre>
 
 <p>Note that if a quoted string is added to an unquoted string (that is, the quoted string is to the left of the <code>+</code>), the result is a quoted string. Likewise, if an unquoted string is added to a quoted string (the unquoted string is to the left of the <code>+</code>), the result is an unquoted string. For example:</p>
 
-<pre class='code prettyprint language-css'>p:before {
+<pre class="code prettyprint language-css">p:before {
   content: &quot;Foo &quot; + Bar;
   font-family: sans- + &quot;serif&quot;; }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p:before {
+<pre class="code prettyprint language-css">p:before {
   content: &quot;Foo Bar&quot;;
   font-family: sans-serif; }</pre>
 
 <p>By default, if two values are placed next to one another, they are concatenated with a space:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   margin: 3px + 4px auto;
 }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   margin: 7px auto; }</pre>
 
 <p>Within a string of text, #{} style interpolation can be used to place dynamic values within the string:</p>
 
-<pre class='code prettyprint language-css'>p:before {
+<pre class="code prettyprint language-css">p:before {
   content: &quot;I ate #{5 + 10} pies!&quot;; }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p:before {
+<pre class="code prettyprint language-css">p:before {
   content: &quot;I ate 15 pies!&quot;; }</pre>
+
+<p>Null values are treated as empty strings for string interpolation:</p>
+
+<pre class="code prettyprint language-css">$value: null;
+p:before {
+  content: &quot;I ate #{$value} pies!&quot;; }</pre>
+
+<p>is compiled to:</p>
+
+<pre class="code prettyprint language-css">p:before {
+  content: &quot;I ate  pies!&quot;;
+  font-family: sans-; }</pre>
 
 <h4 id='boolean_operations'>Boolean Operations</h4>
 
@@ -666,39 +709,39 @@ p {
 
 <h4 id='list_operations'>List Operations</h4>
 
-<p>Lists don&#8217;t support any special operations. Instead, they&#8217;re manipulated using the <a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#list-functions'>list functions</a>.</p>
+<p>Lists don&#8217;t support any special operations. Instead, they&#8217;re manipulated using the <a href='Sass/Script/Functions.html#list-functions'>list functions</a>.</p>
 
 <h3 id='parentheses'>Parentheses</h3>
 
 <p>Parentheses can be used to affect the order of operations:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   width: 1em + (2em * 3);
 }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   width: 7em; }</pre>
 
 <h3 id='functions'>Functions</h3>
 
 <p>SassScript defines some useful functions that are called using the normal CSS function syntax:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: hsl(0, 100%, 50%);
 }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: #ff0000; }</pre>
 
 <h4 id='keyword_arguments'>Keyword Arguments</h4>
 
 <p>Sass functions can also be called using explicit keyword arguments. The above example can also be written as:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: hsl($hue: 0, $saturation: 100%, $lightness: 50%);
 }</pre>
 
@@ -706,24 +749,24 @@ p {
 
 <p>Named arguments can be passed in any order, and arguments with default values can be omitted. Since the named arguments are variable names, underscores and dashes can be used interchangeably.</p>
 
-<p>See <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html' title='Sass::Script::Functions (module)'>Sass::Script::Functions</a></tt> for a full listing of Sass functions and their argument names, as well as instructions on defining your own in Ruby.</p>
+<p>See <tt><a href="Sass/Script/Functions.html" title="Sass::Script::Functions (module)">Sass::Script::Functions</a></tt> for a full listing of Sass functions and their argument names, as well as instructions on defining your own in Ruby.</p>
 
 <h3 id='interpolation_'>Interpolation: <code>#{}</code></h3>
 
 <p>You can also use SassScript variables in selectors and property names using #{} interpolation syntax:</p>
 
-<pre class='code prettyprint language-css'>$name: foo;
+<pre class="code prettyprint language-css">$name: foo;
 $attr: border;
 p.#{$name} { #{$attr}-color: blue }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p.foo {
+<pre class="code prettyprint language-css">p.foo {
   border-color: blue; }</pre>
 
 <p>It&#8217;s also possible to use <code>#{}</code> to put SassScript into property values. In most cases this isn&#8217;t any better than using a variable, but using <code>#{}</code> does mean that any operations near it will be treated as plain CSS. For example:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   $font-size: 12px;
   $line-height: 30px;
   font: #{$font-size}/#{$line-height};
@@ -731,7 +774,7 @@ p.#{$name} { #{$attr}-color: blue }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   font: 12px/30px;
 }</pre>
 
@@ -741,7 +784,7 @@ p.#{$name} { #{$attr}-color: blue }</pre>
 
 <p>For example:</p>
 
-<pre class='code prettyprint language-css'>$content: &quot;First content&quot;;
+<pre class="code prettyprint language-css">$content: &quot;First content&quot;;
 $content: &quot;Second content?&quot; !default;
 $new_content: &quot;First time reference&quot; !default;
 
@@ -752,13 +795,27 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>#main {
+<pre class="code prettyprint language-css">#main {
   content: &quot;First content&quot;;
   new-content: &quot;First time reference&quot;; }</pre>
 
+<p>Variables with <code>null</code> values are treated as unassigned by !default:</p>
+
+<pre class="code prettyprint language-css">$content: null;
+$content: &quot;Non-null content&quot; !default;
+
+#main {
+  content: $content;
+}</pre>
+
+<p>is compiled to:</p>
+
+<pre class="code prettyprint language-css">#main {
+  content: &quot;Non-null content&quot;; }</pre>
+
 <h2 id='directives'><code>@</code>-Rules and Directives</h2>
 
-<p>Sass supports all CSS3 <code>@</code>-rules, as well as some additional Sass-specific ones known as &#8220;directives.&#8221; These have various effects in Sass, detailed below. See also <a href='#control_directives'>control directives</a> and <a href='#mixins'>mixin directives</a>.</p>
+<p>Sass supports all CSS3 <code>@</code>-rules, as well as some additional Sass-specific ones known as &#8220;directives.&#8221; These have various effects in Sass, detailed below. See also <a href='#control-directives'>control directives</a> and <a href='#mixins'>mixin directives</a>.</p>
 
 <h3 id='import'><code>@import</code></h3>
 
@@ -782,31 +839,40 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>For example,</p>
 
-<pre class='code prettyprint language-css'>@import &quot;foo.scss&quot;;</pre>
+<pre class="code prettyprint language-css">@import &quot;foo.scss&quot;;</pre>
 
 <p>or</p>
 
-<pre class='code prettyprint language-css'>@import &quot;foo&quot;;</pre>
+<pre class="code prettyprint language-css">@import &quot;foo&quot;;</pre>
 
 <p>would both import the file <code>foo.scss</code>, whereas</p>
 
-<pre class='code prettyprint language-css'>@import &quot;foo.css&quot;;
+<pre class="code prettyprint language-css">@import &quot;foo.css&quot;;
 @import &quot;foo&quot; screen;
 @import &quot;http://foo.com/bar&quot;;
 @import url(foo);</pre>
 
 <p>would all compile to</p>
 
-<pre class='code prettyprint language-css'>@import &quot;foo.css&quot;;
+<pre class="code prettyprint language-css">@import &quot;foo.css&quot;;
 @import &quot;foo&quot; screen;
 @import &quot;http://foo.com/bar&quot;;
 @import url(foo);</pre>
 
 <p>It&#8217;s also possible to import multiple files in one <code>@import</code>. For example:</p>
 
-<pre class='code prettyprint language-css'>@import &quot;rounded-corners&quot;, &quot;text-shadow&quot;;</pre>
+<pre class="code prettyprint language-css">@import &quot;rounded-corners&quot;, &quot;text-shadow&quot;;</pre>
 
 <p>would import both the <code>rounded-corners</code> and the <code>text-shadow</code> files.</p>
+
+<p>Imports may contain <code>#{}</code> interpolation, but only with certain restrictions. It&#8217;s not possible to dynamically import a Sass file based on a variable; interpolation is only for CSS imports. As such, it only works with <code>url()</code> imports. For example:</p>
+
+<pre class="code prettyprint language-css">$family: unquote(&quot;Droid+Sans&quot;);
+@import url(&quot;http://fonts.googleapis.com/css?family=\#{$family}&quot;);</pre>
+
+<p>would compile to</p>
+
+<pre class="code prettyprint language-css">@import url(&quot;http://fonts.googleapis.com/css?family=Droid+Sans&quot;);</pre>
 
 <h4 id='partials'>Partials</h4>
 
@@ -814,7 +880,7 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>For example, you might have <code>_colors.scss</code>. Then no <code>_colors.css</code> file would be created, and you can do</p>
 
-<pre class='code prettyprint language-css'>@import &quot;colors&quot;;</pre>
+<pre class="code prettyprint language-css">@import &quot;colors&quot;;</pre>
 
 <p>and <code>_colors.scss</code> would be imported.</p>
 
@@ -824,19 +890,19 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>For example, if <code>example.scss</code> contains</p>
 
-<pre class='code prettyprint language-css'>.example {
+<pre class="code prettyprint language-css">.example {
   color: red;
 }</pre>
 
 <p>then</p>
 
-<pre class='code prettyprint language-css'>#main {
+<pre class="code prettyprint language-css">#main {
   @import &quot;example&quot;;
 }</pre>
 
 <p>would compile to</p>
 
-<pre class='code prettyprint language-css'>#main .example {
+<pre class="code prettyprint language-css">#main .example {
   color: red;
 }</pre>
 
@@ -848,7 +914,7 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p><code>@media</code> directives in Sass behave just like they do in plain CSS, with one extra capability: they can be nested in CSS rules. If a <code>@media</code> directive appears within a CSS rule, it will be bubbled up to the top level of the stylesheet, putting all the selectors on the way inside the rule. This makes it easy to add media-specific styles without having to repeat selectors or break the flow of the stylesheet. For example:</p>
 
-<pre class='code prettyprint language-css'>.sidebar {
+<pre class="code prettyprint language-css">.sidebar {
   width: 300px;
   @media screen and (orientation: landscape) {
     width: 500px;
@@ -857,7 +923,7 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>.sidebar {
+<pre class="code prettyprint language-css">.sidebar {
   width: 300px;
 }
 @media screen and (orientation: landscape) {
@@ -868,7 +934,7 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p><code>@media</code> queries can also be nested within one another. The queries will then be combined using the <code>and</code> operator. For example:</p>
 
-<pre class='code prettyprint language-css'>@media screen {
+<pre class="code prettyprint language-css">@media screen {
   .sidebar {
     @media (orientation: landscape) {
       width: 500px;
@@ -878,7 +944,27 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>@media screen and (orientation: landscape) {
+<pre class="code prettyprint language-css">@media screen and (orientation: landscape) {
+  .sidebar {
+    width: 500px;
+  }
+}</pre>
+
+<p>Finally, <code>@media</code> queries can contain SassScript expressions (including variables, functions, and operators) in place of the feature names and feature values. For example:</p>
+
+<pre class="code prettyprint language-css">$media: screen;
+$feature: -webkit-min-device-pixel-ratio;
+$value: 1.5;
+
+@media #{$media} and ($feature: $value) {
+  .sidebar {
+    width: 500px;
+  }
+}</pre>
+
+<p>is compiled to:</p>
+
+<pre class="code prettyprint language-css">@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
   .sidebar {
     width: 500px;
   }
@@ -888,13 +974,13 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>There are often cases when designing a page when one class should have all the styles of another class, as well as its own specific styles. The most common way of handling this is to use both the more general class and the more specific class in the HTML. For example, suppose we have a design for a normal error and also for a serious error. We might write our markup like so:</p>
 
-<pre class='code prettyprint language-html'>&lt;div class=&quot;error seriousError&quot;&gt;
+<pre class="code prettyprint language-html">&lt;div class=&quot;error seriousError&quot;&gt;
   Oh no! You&#39;ve been hacked!
 &lt;/div&gt;</pre>
 
 <p>And our styles like so:</p>
 
-<pre class='code prettyprint language-css'>.error {
+<pre class="code prettyprint language-css">.error {
   border: 1px #f00;
   background-color: #fdd;
 }
@@ -906,7 +992,7 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>The <code>@extend</code> directive avoids these problems by telling Sass that one selector should inherit the styles of another selector. For example:</p>
 
-<pre class='code prettyprint language-css'>.error {
+<pre class="code prettyprint language-css">.error {
   border: 1px #f00;
   background-color: #fdd;
 }
@@ -919,7 +1005,7 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>Other rules that use <code>.error</code> will work for <code>.seriousError</code> as well. For example, if we have special styles for errors caused by hackers:</p>
 
-<pre class='code prettyprint language-css'>.error.intrusion {
+<pre class="code prettyprint language-css">.error.intrusion {
   background-image: url(&quot;/image/hacked.png&quot;);
 }</pre>
 
@@ -929,7 +1015,7 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p><code>@extend</code> works by inserting the extending selector (e.g. <code>.seriousError</code>) anywhere in the stylesheet that the extended selector (.e.g <code>.error</code>) appears. Thus the example above:</p>
 
-<pre class='code prettyprint language-css'>.error {
+<pre class="code prettyprint language-css">.error {
   border: 1px #f00;
   background-color: #fdd;
 }
@@ -943,7 +1029,7 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>.error, .seriousError {
+<pre class="code prettyprint language-css">.error, .seriousError {
   border: 1px #f00;
   background-color: #fdd; }
 
@@ -959,31 +1045,31 @@ $new_content: &quot;First time reference&quot; !default;
 
 <p>Class selectors aren&#8217;t the only things that can be extended. It&#8217;s possible to extend any selector involving only a single element, such as <code>.special.cool</code>, <code>a:hover</code>, or <code>a.user[href^=&quot;http://&quot;]</code>. For example:</p>
 
-<pre class='code prettyprint language-css'>.hoverlink {@extend a:hover}</pre>
+<pre class="code prettyprint language-css">.hoverlink {@extend a:hover}</pre>
 
 <p>Just like with classes, this means that all styles defined for <code>a:hover</code> are also applied to <code>.hoverlink</code>. For example:</p>
 
-<pre class='code prettyprint language-css'>.hoverlink {@extend a:hover}
+<pre class="code prettyprint language-css">.hoverlink {@extend a:hover}
 a:hover {text-decoration: underline}</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>a:hover, .hoverlink {text-decoration: underline}</pre>
+<pre class="code prettyprint language-css">a:hover, .hoverlink {text-decoration: underline}</pre>
 
 <p>Just like with <code>.error.intrusion</code> above, any rule that uses <code>a:hover</code> will also work for <code>.hoverlink</code>, even if they have other selectors as well. For example:</p>
 
-<pre class='code prettyprint language-css'>.hoverlink {@extend a:hover}
+<pre class="code prettyprint language-css">.hoverlink {@extend a:hover}
 .comment a.user:hover {font-weight: bold}</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>.comment a.user:hover, .comment .hoverlink.user {font-weight: bold}</pre>
+<pre class="code prettyprint language-css">.comment a.user:hover, .comment .hoverlink.user {font-weight: bold}</pre>
 
 <h4 id='multiple_extends'>Multiple Extends</h4>
 
 <p>A single selector can extend more than one selector. This means that it inherits the styles of all the extended selectors. For example:</p>
 
-<pre class='code prettyprint language-css'>.error {
+<pre class="code prettyprint language-css">.error {
   border: 1px #f00;
   background-color: #fdd;
 }
@@ -999,7 +1085,7 @@ a:hover {text-decoration: underline}</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>.error, .seriousError {
+<pre class="code prettyprint language-css">.error, .seriousError {
   border: 1px #f00;
   background-color: #fdd; }
 
@@ -1012,11 +1098,13 @@ a:hover {text-decoration: underline}</pre>
 
 <p>In effect, everything with class <code>.seriousError</code> also has class <code>.error</code> <em>and</em> class <code>.attention</code>. Thus, the styles defined later in the document take precedence: <code>.seriousError</code> has background color <code>#ff0</code> rather than <code>#fdd</code>, since <code>.attention</code> is defined later than <code>.error</code>.</p>
 
+<p>Multiple extends can also be written using a comma-separated list of selectors. For example, <code>@extend .error, .attention</code> is the same as <code>@extend .error; @extend.attention</code>.</p>
+
 <h4 id='chaining_extends'>Chaining Extends</h4>
 
 <p>It&#8217;s possible for one selector to extend another selector that in turn extends a third. For example:</p>
 
-<pre class='code prettyprint language-css'>.error {
+<pre class="code prettyprint language-css">.error {
   border: 1px #f00;
   background-color: #fdd;
 }
@@ -1035,7 +1123,7 @@ a:hover {text-decoration: underline}</pre>
 
 <p>Now everything with class <code>.seriousError</code> also has class <code>.error</code>, and everything with class <code>.criticalError</code> has class <code>.seriousError</code> <em>and</em> class <code>.error</code>. It&#8217;s compiled to:</p>
 
-<pre class='code prettyprint language-css'>.error, .seriousError, .criticalError {
+<pre class="code prettyprint language-css">.error, .seriousError, .criticalError {
   border: 1px #f00;
   background-color: #fdd; }
 
@@ -1053,7 +1141,7 @@ a:hover {text-decoration: underline}</pre>
 
 <p>Selector sequences, such as <code>.foo .bar</code> or <code>.foo + .bar</code>, currently can&#8217;t be extended. However, it is possible for nested selectors themselves to use <code>@extend</code>. For example:</p>
 
-<pre class='code prettyprint language-css'>#fake-links .link {@extend a}
+<pre class="code prettyprint language-css">#fake-links .link {@extend a}
 
 a {
   color: blue;
@@ -1062,7 +1150,7 @@ a {
 
 <p>is compiled to</p>
 
-<pre class='code prettyprint language-css'>a, #fake-links .link {
+<pre class="code prettyprint language-css">a, #fake-links .link {
   color: blue; }
   a:hover, #fake-links .link:hover {
     text-decoration: underline; }</pre>
@@ -1071,44 +1159,115 @@ a {
 
 <p>Sometimes a selector sequence extends another selector that appears in another sequence. In this case, the two sequences need to be merged. For example:</p>
 
-<pre class='code prettyprint language-css'>#admin .tabbar a {font-weight: bold}
+<pre class="code prettyprint language-css">#admin .tabbar a {font-weight: bold}
 #demo .overview .fakelink {@extend a}</pre>
 
 <p>While it would technically be possible to generate all selectors that could possibly match either sequence, this would make the stylesheet far too large. The simple example above, for instance, would require ten selectors. Instead, Sass generates only selectors that are likely to be useful.</p>
 
 <p>When the two sequences being merged have no selectors in common, then two new selectors are generated: one with the first sequence before the second, and one with the second sequence before the first. For example:</p>
 
-<pre class='code prettyprint language-css'>#admin .tabbar a {font-weight: bold}
+<pre class="code prettyprint language-css">#admin .tabbar a {font-weight: bold}
 #demo .overview .fakelink {@extend a}</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>#admin .tabbar a,
+<pre class="code prettyprint language-css">#admin .tabbar a,
 #admin .tabbar #demo .overview .fakelink,
 #demo .overview #admin .tabbar .fakelink {
   font-weight: bold; }</pre>
 
 <p>If the two sequences do share some selectors, then those selectors will be merged together and only the differences (if any still exist) will alternate. In this example, both sequences contain the id <code>#admin</code>, so the resulting selectors will merge those two ids:</p>
 
-<pre class='code prettyprint language-css'>#admin .tabbar a {font-weight: bold}
+<pre class="code prettyprint language-css">#admin .tabbar a {font-weight: bold}
 #admin .overview .fakelink {@extend a}</pre>
 
 <p>This is compiled to:</p>
 
-<pre class='code prettyprint language-css'>#admin .tabbar a,
+<pre class="code prettyprint language-css">#admin .tabbar a,
 #admin .tabbar .overview .fakelink,
 #admin .overview .tabbar .fakelink {
   font-weight: bold; }</pre>
+
+<h4 id='placeholders'><code>@extend</code>-Only Selectors</h4>
+
+<p>Sometimes you&#8217;ll write styles for a class that you only ever want to <code>@extend</code>, and never want to use directly in your HTML. This is especially true when writing a Sass library, where you may provide styles for users to <code>@extend</code> if they need and ignore if they don&#8217;t.</p>
+
+<p>If you use normal classes for this, you end up creating a lot of extra CSS when the stylesheets are generated, and run the risk of colliding with other classes that are being used in the HTML. That&#8217;s why Sass supports &#8220;placeholder selectors&#8221; (for example, <code>%foo</code>).</p>
+
+<p>Placeholder selectors look like class and id selectors, except the <code>#</code> or <code>.</code> is replaced by <code>%</code>. They can be used anywhere a class or id could, and on their own they prevent rulesets from being rendered to CSS. For example:</p>
+
+<pre class="code prettyprint language-css">// This ruleset won&#39;t be rendered on its own.
+#context a%extreme {
+  color: blue;
+  font-weight: bold;
+  font-size: 2em;
+}</pre>
+
+<p>However, placeholder selectors can be extended, just like classes and ids. The extended selectors will be generated, but the base placeholder selector will not. For example:</p>
+
+<pre class="code prettyprint language-css">.notice { @extend %extreme; }</pre>
+
+<p>Is compiled to:</p>
+
+<pre class="code prettyprint language-css">#context a.notice {
+  color: blue;
+  font-weight: bold;
+  font-size: 2em;
+}</pre>
+
+<h4 id='the__flag'>The <code>!optional</code> Flag</h4>
+
+<p>Normally when you extend a selector, it&#8217;s an error if that <code>@extend</code> doesn&#8217;t work. For example, if you write <code>a.important {@extend .notice}</code>, it&#8217;s an error if there are no selectors that contain <code>.notice</code>. It&#8217;s also an error if the only selector containing <code>.notice</code> is <code>h1.notice</code>, since <code>h1</code> conflicts with <code>a</code> and so no new selector would be generated.</p>
+
+<p>Sometimes, though, you want to allow an <code>@extend</code> not to produce any new selectors. To do so, just add the <code>!optional</code> flag after the selector. For example:</p>
+
+<pre class="code prettyprint language-css">a.important {
+  @extend .notice !optional;
+}</pre>
+
+<h4 id='_in_directives'><code>@extend</code> in Directives</h4>
+
+<p>There are some restrictions on the use of <code>@extend</code> within directives such as <code>@media</code>. Sass is unable to make CSS rules outside of the <code>@media</code> block apply to selectors inside it without creating a huge amount of stylesheet bloat by copying styles all over the place. This means that if you use <code>@extend</code> within <code>@media</code> (or other CSS directives), you may only extend selectors that appear within the same directive block.</p>
+
+<p>For example, the following works fine:</p>
+
+<pre class="code prettyprint language-css">@media print {
+  .error {
+    border: 1px #f00;
+    background-color: #fdd;
+  }
+  .seriousError {
+    @extend .error;
+    border-width: 3px;
+  }
+}</pre>
+
+<p>But this is an error:</p>
+
+<pre class="code prettyprint language-css">.error {
+  border: 1px #f00;
+  background-color: #fdd;
+}
+
+@media print {
+  .seriousError {
+    // INVALID EXTEND: .error is used outside of the &quot;@media print&quot; directive
+    @extend .error;
+    border-width: 3px;
+  }
+}</pre>
+
+<p>Someday we hope to have <code>@extend</code> supported natively in the browser, which will allow it to be used within <code>@media</code> and other directives.</p>
 
 <h3 id='id8'><code>@debug</code></h3>
 
 <p>The <code>@debug</code> directive prints the value of a SassScript expression to the standard error output stream. It&#8217;s useful for debugging Sass files that have complicated SassScript going on. For example:</p>
 
-<pre class='code'>@debug 10em + 12em;</pre>
+<pre class="code prettyprint language-css">@debug 10em + 12em;</pre>
 
 <p>outputs:</p>
 
-<pre class='code'>Line 1 DEBUG: 22em</pre>
+<pre class="code">Line 1 DEBUG: 22em</pre>
 
 <h3 id='id9'><code>@warn</code></h3>
 
@@ -1122,7 +1281,7 @@ a {
 
 <p>Usage Example:</p>
 
-<pre class='code prettyprint language-css'>@mixin adjust-location($x, $y) {
+<pre class="code prettyprint language-css">@mixin adjust-location($x, $y) {
   @if unitless($x) {
     @warn &quot;Assuming #{$x} to be in pixels&quot;;
     $x: 1px * $x;
@@ -1142,21 +1301,22 @@ a {
 
 <h3 id='id10'><code>@if</code></h3>
 
-<p>The <code>@if</code> directive takes a SassScript expression and uses the styles nested beneath it if the expression returns anything other than <code>false</code>:</p>
+<p>The <code>@if</code> directive takes a SassScript expression and uses the styles nested beneath it if the expression returns anything other than <code>false</code> or <code>null</code>:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   @if 1 + 1 == 2 { border: 1px solid; }
   @if 5 &lt; 3 { border: 2px dotted; }
+  @if null { border: 3px double; }
 }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   border: 1px solid; }</pre>
 
 <p>The <code>@if</code> statement can be followed by several <code>@else if</code> statements and one <code>@else</code> statement. If the <code>@if</code> statement fails, the <code>@else if</code> statements are tried in order until one succeeds or the <code>@else</code> is reached. For example:</p>
 
-<pre class='code prettyprint language-css'>$type: monster;
+<pre class="code prettyprint language-css">$type: monster;
 p {
   @if $type == ocean {
     color: blue;
@@ -1171,22 +1331,22 @@ p {
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   color: green; }</pre>
 
 <h3 id='id11'><code>@for</code></h3>
 
-<p>The <code>@for</code> directive has two forms: <code>@for $var from &lt;start&gt; to &lt;end&gt;</code> or <code>@for $var from &lt;start&gt; through &lt;end&gt;</code>. <code>$var</code> can be any variable name, like <code>$i</code>, and <code>&lt;start&gt;</code> and <code>&lt;end&gt;</code> are SassScript expressions that should return integers.</p>
+<p>The <code>@for</code> directive repeatedly outputs a set of styles. For each repetition, a counter variable is used to adjust the output. The directive has two forms: <code>@for $var from &lt;start&gt; through &lt;end&gt;</code> and <code>@for $var from &lt;start&gt; to &lt;end&gt;</code>. Note the difference in the keywords <code>through</code> and <code>to</code>. <code>$var</code> can be any variable name, like <code>$i</code>; <code>&lt;start&gt;</code> and <code>&lt;end&gt;</code> are SassScript expressions that should return integers.</p>
 
-<p>The <code>@for</code> statement sets <code>$var</code> to each number from <code>&lt;start&gt;</code> to <code>&lt;end&gt;</code>, including <code>&lt;end&gt;</code> if <code>through</code> is used. Then it outputs the nested styles using that value of <code>$var</code>. For example:</p>
+<p>The <code>@for</code> statement sets <code>$var</code> to each successive number in the specified range and each time outputs the nested styles using that value of <code>$var</code>. For the form <code>from ... through</code>, the range <em>includes</em> the values of <code>&lt;start&gt;</code> and <code>&lt;end&gt;</code>, but the form <code>from ... to</code> runs up to <em>but not including</em> the value of <code>&lt;end&gt;</code>. Using the <code>through</code> syntax,</p>
 
-<pre class='code prettyprint language-css'>@for $i from 1 through 3 {
+<pre class="code prettyprint language-css">@for $i from 1 through 3 {
   .item-#{$i} { width: 2em * $i; }
 }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>.item-1 {
+<pre class="code prettyprint language-css">.item-1 {
   width: 2em; }
 .item-2 {
   width: 4em; }
@@ -1199,7 +1359,7 @@ p {
 
 <p>The <code>@each</code> rule sets <code>$var</code> to each item in the list, then outputs the styles it contains using that value of <code>$var</code>. For example:</p>
 
-<pre class='code prettyprint language-css'>@each $animal in puma, sea-slug, egret, salamander {
+<pre class="code prettyprint language-css">@each $animal in puma, sea-slug, egret, salamander {
   .#{$animal}-icon {
     background-image: url(&#39;/images/#{$animal}.png&#39;);
   }
@@ -1207,7 +1367,7 @@ p {
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>.puma-icon {
+<pre class="code prettyprint language-css">.puma-icon {
   background-image: url(&#39;/images/puma.png&#39;); }
 .sea-slug-icon {
   background-image: url(&#39;/images/sea-slug.png&#39;); }
@@ -1220,7 +1380,7 @@ p {
 
 <p>The <code>@while</code> directive takes a SassScript expression and repeatedly outputs the nested styles until the statement evaluates to <code>false</code>. This can be used to achieve more complex looping than the <code>@for</code> statement is capable of, although this is rarely necessary. For example:</p>
 
-<pre class='code prettyprint language-css'>$i: 6;
+<pre class="code prettyprint language-css">$i: 6;
 @while $i &gt; 0 {
   .item-#{$i} { width: 2em * $i; }
   $i: $i - 2;
@@ -1228,7 +1388,7 @@ p {
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>.item-6 {
+<pre class="code prettyprint language-css">.item-6 {
   width: 12em; }
 
 .item-4 {
@@ -1245,7 +1405,7 @@ p {
 
 <p>Mixins are defined with the <code>@mixin</code> directive. It&#8217;s followed by the name of the mixin and optionally the <a href='#mixin-arguments'>arguments</a>, and a block containing the contents of the mixin. For example, the <code>large-text</code> mixin is defined as follows:</p>
 
-<pre class='code prettyprint language-css'>@mixin large-text {
+<pre class="code prettyprint language-css">@mixin large-text {
   font: {
     family: Arial;
     size: 20px;
@@ -1256,7 +1416,7 @@ p {
 
 <p>Mixins may also contain selectors, possibly mixed with properties. The selectors can even contain <a href='#referencing_parent_selectors_'>parent references</a>. For example:</p>
 
-<pre class='code prettyprint language-css'>@mixin clearfix {
+<pre class="code prettyprint language-css">@mixin clearfix {
   display: inline-block;
   &amp;:after {
     content: &quot;.&quot;;
@@ -1272,7 +1432,7 @@ p {
 
 <p>Mixins are included in the document with the <code>@include</code> directive. This takes the name of a mixin and optionally <a href='#mixin-arguments'>arguments to pass to it</a>, and includes the styles defined by that mixin into the current rule. For example:</p>
 
-<pre class='code prettyprint language-css'>.page-title {
+<pre class="code prettyprint language-css">.page-title {
   @include large-text;
   padding: 4px;
   margin-top: 10px;
@@ -1280,7 +1440,7 @@ p {
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>.page-title {
+<pre class="code prettyprint language-css">.page-title {
   font-family: Arial;
   font-size: 20px;
   font-weight: bold;
@@ -1290,7 +1450,7 @@ p {
 
 <p>Mixins may also be included outside of any rule (that is, at the root of the document) as long as they don&#8217;t directly define any properties or use any parent references. For example:</p>
 
-<pre class='code prettyprint language-css'>@mixin silly-links {
+<pre class="code prettyprint language-css">@mixin silly-links {
   a {
     color: blue;
     background-color: red;
@@ -1301,13 +1461,13 @@ p {
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>a {
+<pre class="code prettyprint language-css">a {
   color: blue;
   background-color: red; }</pre>
 
 <p>Mixin definitions can also include other mixins. For example:</p>
 
-<pre class='code prettyprint language-css'>@mixin compound {
+<pre class="code prettyprint language-css">@mixin compound {
   @include highlighted-background;
   @include header-text;
 }
@@ -1323,7 +1483,7 @@ p {
 
 <p>When defining a mixin, the arguments are written as variable names separated by commas, all in parentheses after the name. Then when including the mixin, values can be passed in in the same manner. For example:</p>
 
-<pre class='code prettyprint language-css'>@mixin sexy-border($color, $width) {
+<pre class="code prettyprint language-css">@mixin sexy-border($color, $width) {
   border: {
     color: $color;
     width: $width;
@@ -1335,14 +1495,14 @@ p { @include sexy-border(blue, 1in); }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   border-color: blue;
   border-width: 1in;
   border-style: dashed; }</pre>
 
 <p>Mixins can also specify default values for their arguments using the normal variable-setting syntax. Then when the mixin is included, if it doesn&#8217;t pass in that argument, the default value will be used instead. For example:</p>
 
-<pre class='code prettyprint language-css'>@mixin sexy-border($color, $width: 1in) {
+<pre class="code prettyprint language-css">@mixin sexy-border($color, $width: 1in) {
   border: {
     color: $color;
     width: $width;
@@ -1354,7 +1514,7 @@ h1 { @include sexy-border(blue, 2in); }</pre>
 
 <p>is compiled to:</p>
 
-<pre class='code prettyprint language-css'>p {
+<pre class="code prettyprint language-css">p {
   border-color: blue;
   border-width: 1in;
   border-style: dashed; }
@@ -1368,18 +1528,140 @@ h1 {
 
 <p>Mixins can also be included using explicit keyword arguments. For instance, we the above example could be written as:</p>
 
-<pre class='code prettyprint language-css'>p { @include sexy-border($color: blue); }
+<pre class="code prettyprint language-css">p { @include sexy-border($color: blue); }
 h1 { @include sexy-border($color: blue, $width: 2in); }</pre>
 
 <p>While this is less concise, it can make the stylesheet easier to read. It also allows functions to present more flexible interfaces, providing many arguments without becoming difficult to call.</p>
 
 <p>Named arguments can be passed in any order, and arguments with default values can be omitted. Since the named arguments are variable names, underscores and dashes can be used interchangeably.</p>
 
-<h2 id='functions'>Function Directives</h2>
+<h4 id='variable_arguments'>Variable Arguments</h4>
+
+<p>Sometimes it makes sense for a mixin to take an unknown number of arguments. For example, a mixin for creating box shadows might take any number of shadows as arguments. For these situations, Sass supports &#8220;variable arguments,&#8221; which are arguments at the end of a mixin declaration that take all leftover arguments and package them up as a <a href='#lists'>list</a>. These arguments look just like normal arguments, but are followed by <code>...</code>. For example:</p>
+
+<pre class="code prettyprint language-css">@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;      
+}
+
+.shadows {
+  @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+}</pre>
+
+<p>is compiled to:</p>
+
+<pre class="code prettyprint language-css">.shadowed {
+  -moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  -webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+}</pre>
+
+<p>Variable arguments can also be used when calling a mixin. Using the same syntax, you can expand a list of values so that each value is passed as a separate argument. For example:</p>
+
+<pre class="code prettyprint language-css">@mixin colors($text, $background, $border) {
+  color: $text;
+  background-color: $background;
+  border-color: $border;
+}
+
+$values: #ff0000, #00ff00, #0000ff;
+.primary {
+  @include colors($values...);
+}</pre>
+
+<p>is compiled to:</p>
+
+<pre class="code prettyprint language-css">.primary {
+  color: #ff0000;
+  background-color: #00ff00;
+  border-color: #0000ff;
+}</pre>
+
+<p>You can use variable arguments to wrap a mixin and add additional styles without changing the argument signature of the mixin. If you do so, even keyword arguments will get passed through to the wrapped mixin. For example:</p>
+
+<pre class="code prettyprint language-css">@mixin wrapped-stylish-mixin($args...) {
+  font-weight: bold;
+  @include stylish-mixin($args...);
+}
+
+.stylish {
+  // The $width argument will get passed on to &quot;stylish-mixin&quot; as a keyword
+  @include wrapped-stylish-mixin(#00ff00, $width: 100px);
+}</pre>
+
+<h3 id='mixin-content'>Passing Content Blocks to a Mixin</h3>
+
+<p>It is possible to pass a block of styles to the mixin for placement within the styles included by the mixin. The styles will appear at the location of any <code>@content</code> directives found within the mixin. This makes is possible to define abstractions relating to the construction of selectors and directives.</p>
+
+<p>For example:</p>
+
+<pre class="code prettyprint language-css">@mixin apply-to-ie6-only {
+  * html {
+    @content;
+  }
+}
+@include apply-to-ie6-only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}</pre>
+
+<p>Generates:</p>
+
+<pre class="code prettyprint language-css">* html #logo {
+  background-image: url(/logo.gif);
+}</pre>
+
+<p>The same mixins can be done in the <code>.sass</code> shorthand syntax:</p>
+
+<pre class="code">=apply-to-ie6-only
+  * html
+    @content
+
++apply-to-ie6-only
+  #logo
+    background-image: url(/logo.gif)</pre>
+
+<p><strong>Note:</strong> when the <code>@content</code> directive is specified more than once or in a loop, the style block will be duplicated with each invocation.</p>
+
+<h4 id='variable_scope_and_content_blocks'>Variable Scope and Content Blocks</h4>
+
+<p>The block of content passed to a mixin are evaluated in the scope where the block is defined, not in the scope of the mixin. This means that variables local to the mixin <strong>cannot</strong> be used within the passed style block and variables will resolve to the global value:</p>
+
+<pre class="code prettyprint language-css">$color: white;
+@mixin colors($color: blue) {
+  background-color: $color;
+  @content;
+  border-color: $color;
+}
+.colors {
+  @include colors { color: $color; }
+}</pre>
+
+<p>Compiles to:</p>
+
+<pre class="code prettyprint language-css">.colors {
+  background-color: blue;
+  color: white;
+  border-color: blue;
+}</pre>
+
+<p>Additionally, this makes it clear that the variables and mixins that are used within the passed block are related to the other styles around where the block is defined. For example:</p>
+
+<pre class="code prettyprint language-css">#sidebar {
+  $sidebar-width: 300px;
+  width: $sidebar-width;
+  @include iphone {
+    width: $sidebar-width / 3;
+  }
+}</pre>
+
+<h2 id='function_directives'>Function Directives</h2>
 
 <p>It is possible to define your own functions in sass and use them in any value or script context. For example:</p>
 
-<pre class='code prettyprint language-css'>$grid-width: 40px;
+<pre class="code prettyprint language-css">$grid-width: 40px;
 $gutter-width: 10px;
 
 @function grid-width($n) {
@@ -1390,16 +1672,18 @@ $gutter-width: 10px;
 
 <p>Becomes:</p>
 
-<pre class='code prettyprint language-css'>#sidebar {
+<pre class="code prettyprint language-css">#sidebar {
   width: 240px; }</pre>
 
 <p>As you can see functions can access any globally defined variables as well as accept arguments just like a mixin. A function may have several statements contained within it, and you must call <code>@return</code> to set the return value of the function.</p>
 
 <p>As with mixins, you can call Sass-defined functions using keyword arguments. In the above example we could have called the function like this:</p>
 
-<pre class='code prettyprint language-css'>#sidebar { width: grid-width($n: 5); }</pre>
+<pre class="code prettyprint language-css">#sidebar { width: grid-width($n: 5); }</pre>
 
 <p>It is recommended that you prefix your functions to avoid naming conflicts and so that readers of your stylesheets know they are not part of Sass or CSS. For example, if you work for ACME Corp, you might have named the function above <code>-acme-grid-width</code>.</p>
+
+<p>User-defined functions also support <a href='#variable-arguments'>variable arguments</a> in the same way as mixins.</p>
 
 <h2 id='output_style'>Output Style</h2>
 
@@ -1411,7 +1695,7 @@ $gutter-width: 10px;
 
 <p>Nested style is the default Sass style, because it reflects the structure of the CSS styles and the HTML document they&#8217;re styling. Each property has its own line, but the indentation isn&#8217;t constant. Each rule is indented based on how deeply it&#8217;s nested. For example:</p>
 
-<pre class='code prettyprint language-css'>#main {
+<pre class="code prettyprint language-css">#main {
   color: #fff;
   background-color: #000; }
   #main p {
@@ -1428,7 +1712,7 @@ $gutter-width: 10px;
 
 <p>Expanded is a more typical human-made CSS style, with each property and rule taking up one line. Properties are indented within the rules, but the rules aren&#8217;t indented in any special way. For example:</p>
 
-<pre class='code prettyprint language-css'>#main {
+<pre class="code prettyprint language-css">#main {
   color: #fff;
   background-color: #000;
 }
@@ -1446,7 +1730,7 @@ $gutter-width: 10px;
 
 <p>Compact style takes up less space than Nested or Expanded. It also draws the focus more to the selectors than to their properties. Each CSS rule takes up only one line, with every property defined on that line. Nested rules are placed next to each other with no newline, while separate groups of rules have newlines between them. For example:</p>
 
-<pre class='code prettyprint language-css'>#main { color: #fff; background-color: #000; }
+<pre class="code prettyprint language-css">#main { color: #fff; background-color: #000; }
 #main p { width: 10em; }
 
 .huge { font-size: 10em; font-weight: bold; text-decoration: underline; }</pre>
@@ -1455,7 +1739,7 @@ $gutter-width: 10px;
 
 <p>Compressed style takes up the minimum amount of space possible, having no whitespace except that necessary to separate selectors and a newline at the end of the file. It also includes some other minor compressions, such as choosing the smallest representation for colors. It&#8217;s not meant to be human-readable. For example:</p>
 
-<pre class='code prettyprint language-css'>#main{color:#fff;background-color:#000}#main p{width:10em}.huge{font-size:10em;font-weight:bold;text-decoration:underline}</pre>
+<pre class="code prettyprint language-css">#main{color:#fff;background-color:#000}#main p{width:10em}.huge{font-size:10em;font-weight:bold;text-decoration:underline}</pre>
 
 <h2 id='extending_sass'>Extending Sass</h2>
 
@@ -1463,33 +1747,32 @@ $gutter-width: 10px;
 
 <h3 id='defining_custom_sass_functions'>Defining Custom Sass Functions</h3>
 
-<p>Users can define their own Sass functions using the Ruby API. For more information, see the <a href='http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html#adding_custom_functions'>source documentation</a>.</p>
+<p>Users can define their own Sass functions using the Ruby API. For more information, see the <a href='Sass/Script/Functions.html#adding_custom_functions'>source documentation</a>.</p>
 
 <h3 id='cache_stores'>Cache Stores</h3>
 
-<p>Sass caches parsed documents so that they can be reused without parsing them again unless they have changed. By default, Sass will write these cache files to a location on the filesystem indicated by <a href='#cache_location-option'><code>:cache_location</code></a>. If you cannot write to the filesystem or need to share cache across ruby processes or machines, then you can define your own cache store and set the<a href='#cache_store-option'><code>:cache_store</code> option</a>. For details on creating your own cache store, please see the <tt><a href='http://sass-lang.com/docs/yardoc/Sass/CacheStores/Base.html' title='Sass::CacheStores::Base (class)'>source documentation</a></tt>.</p>
+<p>Sass caches parsed documents so that they can be reused without parsing them again unless they have changed. By default, Sass will write these cache files to a location on the filesystem indicated by <a href='#cache_location-option'><code>:cache_location</code></a>. If you cannot write to the filesystem or need to share cache across ruby processes or machines, then you can define your own cache store and set the<a href='#cache_store-option'><code>:cache_store</code> option</a>. For details on creating your own cache store, please see the <tt><a href="Sass/CacheStores/Base.html" title="Sass::CacheStores::Base (class)">source documentation</a></tt>.</p>
 
 <h3 id='custom_importers'>Custom Importers</h3>
 
-<p>Sass importers are in charge of taking paths passed to <code>@import</code> and finding the appropriate Sass code for those paths. By default, this code is loaded from the <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Importers/Filesystem.html' title='Sass::Importers::Filesystem (class)'>filesystem</a></tt>, but importers could be added to load from a database, over HTTP, or use a different file naming scheme than what Sass expects.</p>
+<p>Sass importers are in charge of taking paths passed to <code>@import</code> and finding the appropriate Sass code for those paths. By default, this code is loaded from the <tt><a href="Sass/Importers/Filesystem.html" title="Sass::Importers::Filesystem (class)">filesystem</a></tt>, but importers could be added to load from a database, over HTTP, or use a different file naming scheme than what Sass expects.</p>
 
-<p>Each importer is in charge of a single load path (or whatever the corresponding notion is for the backend). Importers can be placed in the <a href='http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#load_paths-option' title='&lt;code&gt;:load_paths&lt;/code&gt; array'><code>:load_paths</code> array</a> alongside normal filesystem paths.</p>
+<p>Each importer is in charge of a single load path (or whatever the corresponding notion is for the backend). Importers can be placed in the <a href="file.SASS_REFERENCE.html#load_paths-option" title="&lt;code&gt;:load_paths&lt;/code&gt; array"><code>:load_paths</code> array</a> alongside normal filesystem paths.</p>
 
 <p>When resolving an <code>@import</code>, Sass will go through the load paths looking for an importer that successfully imports the path. Once one is found, the imported file is used.</p>
 
-<p>User-created importers must inherit from <tt><a href='http://sass-lang.com/docs/yardoc/Sass/Importers/Base.html' title='Sass::Importers::Base (class)'>Sass::Importers::Base</a></tt>.</p>
+<p>User-created importers must inherit from <tt><a href="Sass/Importers/Base.html" title="Sass::Importers::Base (class)">Sass::Importers::Base</a></tt>.</p></div></div>
+
       </div>
     </div>
-  
 
-    
-    <div id='footer'>
-      <p>Generated on Fri Dec 16 20:17:46 2011 by 
-      <a href='http://yardoc.org' title='Yay! A Ruby Documentation Tool'>yard</a>
+   <div id='footer'>
+      <p>Generated on Fri Aug 10 21:22:53 2012 by 
+      <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
       0.5.3 (ruby-1.8.7).</p>
-      
+
       <p>Sass © 2006-2012 <a href='http://hamptoncatlin.com' rel='author'>Hampton Catlin</a>, <a href='http://nex-3.com' rel='author'>Nathan Weizenbaum</a>, <a href='http://chriseppstein.github.com' rel='author'>Chris Eppstein</a>, and numerous contributors. It is available for use and modification under the <a href='http://sass-lang.com/docs/yardoc/file.MIT-LICENSE.html'>MIT license</a>.</p>
-      <p>The Sass Reference was designed by <a href='http://www.kaelig.fr'>Kaelig</a>.</p>
+      <p>This Sass Reference was re-designed by <a href='http://www.kaelig.fr'>Kaelig</a>.</p>
       <p><a href='https://github.com/Kaelig/Sass-reference'><strong>Contribute on GitHub</strong></a></p>
     </div>
   </div>
