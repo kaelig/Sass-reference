@@ -287,16 +287,16 @@ $toc-width: 220px;
   @extend .quiet;
   font-size: 1.2em;
   padding-right: 320px;
-  min-height: 220px;
+  min-height: 280px;
   margin-top: 11px;
-  background: url('http://www.sass-lang.com/assets/img/logo-235e394c.png') right top no-repeat;
-  background-size: 256px 192px;
+  background: url('better-sass-docs.png') right -30px no-repeat;
+  background-size: 300px 300px;
 
   @media only screen and (max-width : 750px) {
     margin-top: 1.5em;
     padding-right: 0;
-    padding-top: 212px;
-    background-position: center top;
+    padding-top: 250px;
+    background-position: center -30px;
   }
 }
 
