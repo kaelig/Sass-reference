@@ -33,4 +33,4 @@ This reference is readable on desktop, mobile and tablets.
 
 Install Sass, then open the terminal and run:
 
-`sass --watch s.scss:s.css --compass`
+`sass s.scss:s.css`

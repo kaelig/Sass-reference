@@ -1,75 +1,27 @@
-/*
+/*!
   You are looking at the compiled version of the CSS
 
   You can view the source Sass file here:
   https://github.com/Kaelig/Sass-reference/blob/master/s.scss
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline; }
-
-html {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle; }
-
-q, blockquote {
-  quotes: none; }
-  q:before, q:after, blockquote:before, blockquote:after {
-    content: "";
-    content: none; }
-
-a img {
-  border: none; }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block; }
-
 body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0;
   -webkit-text-size-adjust: none;
   -ms-text-size-adjust: none;
-  border-top: 4px solid #ce4dd6; }
+  border-top: 4px solid #cc6699; }
   @media only screen and (max-width: 750px) {
     body {
-      padding: .5em 1em; } }
-
-body {
-  line-height: 1.5;
-  font-family: sans-serif;
-  color: #4d4d4d;
-  font-size: 100%; }
+      padding: .5em 16px; } }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: IowanOldStyle-Roman, Georgia, serif;
   font-weight: normal;
   color: #3c3c3c; }
-  h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
-    margin: 0; }
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+  margin: 0; }
 
 h1 {
   font-size: 3em;
@@ -101,28 +53,32 @@ h6 {
 
 p {
   margin: 0 0 1.5em; }
-  p .left {
-    display: inline;
-    float: left;
-    margin: 1.5em 1.5em 1.5em 0;
-    padding: 0; }
-  p .right {
-    display: inline;
-    float: right;
-    margin: 1.5em 0 1.5em 1.5em;
-    padding: 0; }
+
+p .left {
+  display: inline;
+  float: left;
+  margin: 1.5em 1.5em 1.5em 0;
+  padding: 0; }
+
+p .right {
+  display: inline;
+  float: right;
+  margin: 1.5em 0 1.5em 1.5em;
+  padding: 0; }
 
 a {
-  text-decoration: underline;
-  color: #0069d6; }
+  color: #669999;
+  text-decoration: none; }
+  a:hover, a:focus {
+    text-decoration: underline; }
   a:visited {
-    color: #0a82ff; }
+    color: #85adad; }
   a:focus {
-    color: #00438a; }
+    color: #476b6b; }
   a:hover {
-    color: #00438a; }
+    color: #003366; }
   a:active {
-    color: #002a57; }
+    color: #334c4d; }
 
 blockquote {
   margin: 1.5em;
@@ -171,8 +127,9 @@ ol {
 
 dl {
   margin: 0 0 1.5em 0; }
-  dl dt {
-    font-weight: bold; }
+
+dl dt {
+  font-weight: bold; }
 
 dd {
   margin-left: 1.5em; }
@@ -200,16 +157,11 @@ tfoot {
 caption {
   background: #eeeeee; }
 
-.quiet, #intro, #footer {
+.quiet, #intro, #footer, #intro, #footer {
   color: gray; }
 
 .loud {
   color: #2b2b2b; }
-
-a {
-  text-decoration: none; }
-  a:hover, a:focus {
-    text-decoration: underline; }
 
 small, .small {
   font-size: .75em;
@@ -220,48 +172,49 @@ small, .small {
 
 .maruku_toc {
   float: left;
-  width: 190px;
-  background: #fbf4fe;
+  width: 220px;
+  background: #f1f5f4;
   position: relative;
   padding: 1em 1em 1.33em 1.33em;
   margin-right: 2em; }
   @media only screen and (max-width: 750px) {
     .maruku_toc {
       float: none;
-      margin-right: 0;
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-left: 16px;
+      padding-right: 16px;
       width: auto; } }
   .maruku_toc ul {
     list-style-type: none; }
   .maruku_toc > ul > li {
-    margin-bottom: .5em; }
+    margin-bottom: 1em; }
+  .maruku_toc > ul > li > ul > li {
+    margin-top: .125em; }
   .maruku_toc ul {
-    font-size: .875em;
+    font-size: .925em;
     margin: 0;
     padding: 0;
     font-weight: bold; }
     .maruku_toc ul a {
-      color: #005cbd; }
+      color: #5c8a8a; }
       .maruku_toc ul a:visited {
-        color: #005cbd; }
-      .maruku_toc ul a:focus {
-        color: #0066d1; }
-      .maruku_toc ul a:hover {
-        color: #0066d1; }
+        color: #3c4048; }
+      .maruku_toc ul a:focus, .maruku_toc ul a:hover {
+        color: #649696; }
       .maruku_toc ul a:active {
-        color: #005cbd; }
+        color: #5c8a8a; }
     .maruku_toc ul ul {
-      padding-left: 1em;
-      font-weight: normal; }
+      padding-left: .5em; }
       .maruku_toc ul ul a {
-        color: #4d4d4d; }
+        font-weight: normal;
+        color: #484c55; }
         .maruku_toc ul ul a:visited {
-          color: #4d4d4d; }
-        .maruku_toc ul ul a:focus {
-          color: #393939; }
-        .maruku_toc ul ul a:hover {
-          color: #393939; }
+          color: #35383f; }
+        .maruku_toc ul ul a:focus, .maruku_toc ul ul a:hover {
+          color: #484c55; }
         .maruku_toc ul ul a:active {
-          color: #4d4d4d; }
+          color: #5c8a8a; }
       .maruku_toc ul ul ul ul {
         font-size: 1em; }
 
@@ -273,21 +226,24 @@ small, .small {
 
 .bettersassdocs {
   overflow: hidden; }
+  .bettersassdocs a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+    .bettersassdocs a:hover, .bettersassdocs a:focus {
+      text-decoration: none;
+      border-bottom-color: rgba(0, 0, 0, 0.3); }
 
 #intro {
   font-size: 1.2em;
-  padding-right: 240px;
-  min-height: 240px;
+  padding-right: 276px;
+  min-height: 220px;
   margin-top: 1.5em;
-  background: url("http://sass-lang.com/images/sass.gif") right top no-repeat; }
+  background: url("http://www.sass-lang.com/assets/img/logo-235e394c.png") right top no-repeat;
+  background-size: 256px 192px; }
   @media only screen and (max-width: 750px) {
     #intro {
       padding-right: 0;
-      padding-top: 250px;
+      padding-top: 212px;
       background-position: center top; } }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, serif; }
 
 h2, h3 {
   margin-top: 2em; }
@@ -306,18 +262,17 @@ h4 {
   @media only screen and (max-width: 750px) {
     #sass_syntactically_awesome_stylesheets {
       font-size: .5em;
-      padding: 2.5em .5em 1.5em 1.5em; } }
+      padding: 2em .5em 1.5em 0; } }
 
 :target {
-  background: rgba(206, 77, 214, 0.25); }
+  background: rgba(204, 102, 153, 0.3);
+  outline: 8px solid rgba(204, 102, 153, 0.3); }
 
 #footer {
   border-top: 1px solid #D2D2D2;
-  -webkit-box-shadow: #f0f0f0 0 1px 0 inset;
-  -moz-box-shadow: #f0f0f0 0 1px 0 inset;
-  box-shadow: #f0f0f0 0 1px 0 inset;
+  box-shadow: #F0F0F0 0 1px 0 inset;
   font-size: .75em;
-  padding: 2em 2em 2em 260px; }
+  padding: 2em 2em 2em 290px; }
   #footer h2 {
     font-size: 1.3em;
     border-top: 0; }
@@ -327,68 +282,72 @@ h4 {
 
 .btn {
   display: inline-block;
-  background-color: #ce4dd6;
+  background-color: #cc6699;
   padding: 5px 14px 6px;
   margin-bottom: .2em;
   font-size: .875em;
   line-height: normal;
-  font-family: Georgia, serif; }
+  font-family: IowanOldStyle-Roman, Georgia, serif; }
   .btn, .btn:link, .btn:visited {
     color: #fff; }
   .btn:hover, .btn:focus {
-    background-color: #d462db;
+    background-color: #d279a6;
     text-decoration: none; }
   .btn:active {
-    background-color: #ba2dc3; }
+    background-color: #bf4080; }
 
-.bettersassdocs .com {
-  color: #93a1a1; }
-.bettersassdocs .lit {
-  color: #195f91; }
-.bettersassdocs .pun,
-.bettersassdocs .opn,
-.bettersassdocs .clo {
-  color: #93a1a1; }
-.bettersassdocs .fun {
-  color: #dc322f; }
-.bettersassdocs .str,
-.bettersassdocs .atv {
-  color: #268bd2; }
-.bettersassdocs .kwd,
-.bettersassdocs .tag {
-  color: #195f91; }
-.bettersassdocs .typ,
-.bettersassdocs .atn,
-.bettersassdocs .dec,
-.bettersassdocs .var {
-  color: #CB4B16; }
-.bettersassdocs .pln {
-  color: #738181; }
-.bettersassdocs .prettyprint {
-  background-color: #fefbf3;
-  padding: 9px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px; }
-.bettersassdocs code,
-.bettersassdocs pre {
-  padding: 0 3px 2px;
-  font-family: Monaco, Andale Mono, Courier New, monospace;
-  border-radius: 3px; }
-.bettersassdocs code {
-  background-color: #f7c9b6;
-  color: rgba(0, 0, 0, 0.75);
-  padding: 1px 3px; }
-.bettersassdocs pre {
-  background-color: #f5f5f5;
-  display: block;
-  padding: 1em;
-  margin: 0 0 1.5em;
-  line-height: 1.5em;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word; }
+.bettersassdocs {
+  /* Hemisu Light */
+  /* Original theme - http://noahfrederick.com/vim-color-scheme-hemisu/ */ }
+  .bettersassdocs .pln {
+    color: #111111; }
+  .bettersassdocs .str {
+    color: #739200; }
+  .bettersassdocs .kwd {
+    color: #739200; }
+  .bettersassdocs .com {
+    color: #999999; }
+  .bettersassdocs .typ {
+    color: #ff0055; }
+  .bettersassdocs .lit {
+    color: #538192; }
+  .bettersassdocs .pun {
+    color: #111111; }
+  .bettersassdocs .opn {
+    color: #111111; }
+  .bettersassdocs .clo {
+    color: #111111; }
+  .bettersassdocs .tag {
+    color: #111111; }
+  .bettersassdocs .atn {
+    color: #739200; }
+  .bettersassdocs .atv {
+    color: #ff0055; }
+  .bettersassdocs .dec {
+    color: #111111; }
+  .bettersassdocs .var {
+    color: #111111; }
+  .bettersassdocs .fun {
+    color: #538192; }
+  .bettersassdocs code,
+  .bettersassdocs pre {
+    padding: 0 3px 2px;
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    border-radius: 3px; }
+  .bettersassdocs code {
+    background-color: #f7f3ee;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px; }
+  .bettersassdocs pre {
+    background-color: #fefdfc;
+    display: block;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    line-height: 1.5em;
+    font-size: 1em;
+    border: 1px solid #ebe2d6;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word; }
+
+/*# sourceMappingURL=s.css.map */

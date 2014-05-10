@@ -28,3 +28,61 @@ hashComments:3,cStyleComments:!0,multilineStrings:!0,tripleQuotedStrings:!0,rege
 PR_NOCODE:"nocode",PR_PLAIN:"pln",PR_PUNCTUATION:"pun",PR_SOURCE:"src",PR_STRING:"str",PR_TAG:"tag",PR_TYPE:"typ"}})();
 PR.registerLangHandler(PR.createSimpleLexer([["pln",/^[\t\n\f\r ]+/,null," \t\r\n"]],[["str",/^"(?:[^\n\f\r"\\]|\\(?:\r\n?|\n|\f)|\\[\S\s])*"/,null],["str",/^'(?:[^\n\f\r'\\]|\\(?:\r\n?|\n|\f)|\\[\S\s])*'/,null],["lang-css-str",/^url\(([^"')]*)\)/i],["kwd",/^(?:url|rgb|!important|@import|@page|@media|@charset|inherit)(?=[^\w-]|$)/i,null],["lang-css-kw",/^(-?(?:[_a-z]|\\[\da-f]+ ?)(?:[\w-]|\\\\[\da-f]+ ?)*)\s*:/i],["com",/^\/\*[^*]*\*+(?:[^*/][^*]*\*+)*\//],["com",
 /^(?:<\!--|--\>)/],["lit",/^(?:\d+|\d*\.\d+)(?:%|[a-z]+)?/i],["lit",/^#[\da-f]{3,6}/i],["pln",/^-?(?:[_a-z]|\\[\da-f]+ ?)(?:[\w-]|\\\\[\da-f]+ ?)*/i],["pun",/^[^\s\w"']+/]]),["css"]);PR.registerLangHandler(PR.createSimpleLexer([],[["kwd",/^-?(?:[_a-z]|\\[\da-f]+ ?)(?:[\w-]|\\\\[\da-f]+ ?)*/i]]),["css-kw"]);PR.registerLangHandler(PR.createSimpleLexer([],[["str",/^[^"')]+/]]),["css-str"]);
+PR['registerLangHandler'](
+    PR['createSimpleLexer'](
+        [
+            // The space production <s>
+            [PR['PR_PLAIN'], /^[ \t\r\n\f]+/, null, ' \t\r\n\f']
+        ],
+        [
+            // Quoted strings.  <string1> and <string2>
+            [PR['PR_STRING'], /^\"(?:[^\n\r\f\\\"]|\\(?:\r\n?|\n|\f)|\\[\s\S])*\"/, null],
+            [PR['PR_STRING'], /^\'(?:[^\n\r\f\\\']|\\(?:\r\n?|\n|\f)|\\[\s\S])*\'/, null],
+            ['lang-scss-str', /^url\(([^\)\"\']+)\)/i],
+            [PR['PR_KEYWORD'], /^(?:(?:feature|(?:global-)?variable|function|mixin)-exists|\!default|\!global|\!important|\!optional|@at-root|@charset|@debug|@each|@else(?: if)?|@extend|@for|@function|@if|@import|@include|@media|@mixin|@page|@return|@warn|@while|inherit|abs|adjust-color|adjust-hue|alpha|blue|call|ceil|change-color|comparable|complement|darken|desaturate|fade-in|fade-out|floor|grayscale|green|hsla?|hue|inspect|invert|join|length|lighten|lightness|list-separator|map-(?:get|merge|remove|keys|values|has-key)|mix|nth|opacity|percentage|quote|random|red|rgba?|round|saturate|saturation|scale-color|set-nth|str-(?:length|insert|index|slice)|to-(?:upper|lower)-case|transparentize|type-of|unit|unitless|unquote|unique-id|url)(?=[^\-\w]|$)/i, null],
+            // A property name -- an identifier followed by a colon.
+            ['lang-scss-kw', /^(-?(?:[_a-z]|(?:\\[0-9a-f]+ ?))(?:[_a-z0-9\-]|\\(?:\\[0-9a-f]+ ?))*)\s*:/i],
+            // A C style block comment.  The <comment> production.
+            [PR['PR_COMMENT'], /^\/\*[^*]*\*+(?:[^\/*][^*]*\*+)*\//],
+            // A C style line comment.
+            [PR['PR_COMMENT'], /^\/\/[^\r\n]*/, null],
+            // Escaping text spans
+            // [PR['PR_COMMENT'], /^(?:<!--|-->)/],
+            // A number possibly containing a suffix.
+            [PR['PR_LITERAL'], /^(?:\d+|\d*\.\d+)(?:%|[a-z]+)?/i],
+            // A hex color
+            [PR['PR_LITERAL'], /^#(?:[0-9a-f]{3}){1,2}/i],
+            // Interpolation syntax: #{...}
+            [PR['PR_LITERAL'], /^#{.*?}/],
+            // Parental reference: &
+            [PR['PR_LITERAL'], /^&/],
+            // An identifier
+            [PR['PR_PLAIN'], /^-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i],
+            // An SCSS variable (for preventing keyword highlihting)
+            [PR['PR_PLAIN'], /^\$?-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i],
+            // A run of punctuation
+            [PR['PR_PUNCTUATION'], /^[^\s\w\'\"#{}$]+/]
+        ]
+    ),
+    ['scss', 'sass']
+);
+
+PR['registerLangHandler'](
+    PR['createSimpleLexer'](
+        [],
+        [
+            [PR['PR_KEYWORD'], /^-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i]
+        ]
+    ),
+    ['scss-kw']
+);
+
+PR['registerLangHandler'](
+    PR['createSimpleLexer'](
+        [],
+        [
+            [PR['PR_STRING'], /^[^\)\"\']+/]
+        ]
+    ),
+    ['scss-str']
+);
