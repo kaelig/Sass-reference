@@ -286,13 +286,14 @@ $toc-width: 220px;
 #intro {
   @extend .quiet;
   font-size: 1.2em;
-  padding-right: 276px;
+  padding-right: 320px;
   min-height: 220px;
-  margin-top: 1.5em;
+  margin-top: 11px;
   background: url('http://www.sass-lang.com/assets/img/logo-235e394c.png') right top no-repeat;
   background-size: 256px 192px;
 
   @media only screen and (max-width : 750px) {
+    margin-top: 1.5em;
     padding-right: 0;
     padding-top: 212px;
     background-position: center top;
@@ -313,7 +314,7 @@ h4 {
 
 // This is the title
 #sass_syntactically_awesome_stylesheets {
-  padding: 2.5em .5em 1.5em 3em;
+  padding: 2.5em .5em 1.5em 290px;
   h1 {
     margin-bottom: .2em;
   }

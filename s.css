@@ -234,13 +234,14 @@ small, .small {
 
 #intro {
   font-size: 1.2em;
-  padding-right: 276px;
+  padding-right: 320px;
   min-height: 220px;
-  margin-top: 1.5em;
+  margin-top: 11px;
   background: url("http://www.sass-lang.com/assets/img/logo-235e394c.png") right top no-repeat;
   background-size: 256px 192px; }
   @media only screen and (max-width: 750px) {
     #intro {
+      margin-top: 1.5em;
       padding-right: 0;
       padding-top: 212px;
       background-position: center top; } }
@@ -256,7 +257,7 @@ h4 {
   color: #777; }
 
 #sass_syntactically_awesome_stylesheets {
-  padding: 2.5em .5em 1.5em 3em; }
+  padding: 2.5em .5em 1.5em 290px; }
   #sass_syntactically_awesome_stylesheets h1 {
     margin-bottom: .2em; }
   @media only screen and (max-width: 750px) {
