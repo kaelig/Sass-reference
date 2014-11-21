@@ -18,7 +18,7 @@ This reference is readable on desktop, mobile and tablets.
 ## Authors
 
 - [Hampton Catlin](http://hamptoncatlin.com)
-- [Nathan Weizenbaum](http://nex-3.com)
+- [Nathalie Weizenbaum](http://nex-3.com)
 - [Chris Eppstein](http://chriseppstein.github.com)
 
 ## “Design” of Better Sass Docs
