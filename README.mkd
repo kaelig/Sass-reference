@@ -25,7 +25,7 @@ This reference is readable on desktop, mobile and tablets.
 
 - [Kaelig](http://www.kaelig.fr)
 
-## Thanks
+## Thanks to…
 
 - [Paul Irish](https://github.com/paulirish)
 
@@ -34,3 +34,7 @@ This reference is readable on desktop, mobile and tablets.
 Install Sass, then open the terminal and run:
 
 `sass s.scss:s.css`
+
+or, if running [node-sass](https://github.com/sass/node-sass):
+
+`node-sass --watch s.scss s.css --source-map s.css.map`

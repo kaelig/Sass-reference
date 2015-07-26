@@ -1,9 +1,9 @@
 /*!
-  You are looking at the compiled version of the CSS
-
-  You can view the source Sass file here:
-  https://github.com/Kaelig/Sass-reference/blob/master/s.scss
-*/
+ * You are looking at the compiled version of the CSS
+ *
+ * You can view the source Sass file here:
+ * https://github.com/Kaelig/Sass-reference/blob/master/s.scss
+ */
 
 // Hmmm, Sassy!
 $hopbush: #c69;
@@ -27,11 +27,14 @@ $link-active-color: darken($link-color, 25%);
 $link-visited-color: lighten($link-color, 10%);
 $link-focus-color: darken($link-color, 15%);
 
+@import 'reset';
 
 body {
   font-family: sans-serif;
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 0;
+  padding-left: 16px;
+  padding-right: 16px;
 
   // Prevent Webkit and Windows Mobile platforms from changing default font sizes.
   -webkit-text-size-adjust: none;
@@ -39,8 +42,9 @@ body {
 
   border-top: 4px solid $hopbush;
 
-  @media only screen and (max-width : 750px) {
-    padding: .5em 16px;
+  @media (max-width : 750px) {
+    padding-top: .5em;
+    padding-bottom: .5em;
   }
 }
 
@@ -207,7 +211,7 @@ $toc-width: 220px;
   position: relative;
   padding: 1em 1em 1.33em 1.33em;
   margin-right: 2em;
-  @media only screen and (max-width : 750px) {
+  @media (max-width : 750px) {
     float: none;
     margin-left: -16px;
     margin-right: -16px;
@@ -267,7 +271,8 @@ $toc-width: 220px;
 }
 #filecontents {
   padding-right: 2em;
-  @media only screen and (max-width : 750px) {
+
+  @media (max-width : 750px) {
     padding-right: 0;
   }
 }
@@ -282,25 +287,63 @@ $toc-width: 220px;
       border-bottom-color: rgba(0, 0, 0, .3);
     }
   }
+
+
+  // Inline and block code styles
+  code,
+  pre {
+    padding: 0 3px 2px;
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+    border-radius: 3px;
+  }
+  code {
+    background-color: lighten($dawn-pink, 3%);
+    color: rgba(0, 0, 0, .75);
+    padding: 1px 3px;
+  }
+  pre {
+    background-color: lighten($dawn-pink, 7%);
+    display: block;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    line-height: 1.5em;
+    font-size: 1em;
+    border: 1px solid darken($dawn-pink, 4%);
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    code {
+      background: transparent;
+    }
+  }
 }
 #intro {
   @extend .quiet;
   font-size: 1.2em;
-  padding-right: 320px;
   min-height: 280px;
-  margin-top: 11px;
-  background: url('better-sass-docs.png') right -30px no-repeat;
-  background-size: 300px 300px;
+  margin-top: 1.5em;
 
-  @media only screen and (max-width : 750px) {
-    margin-top: 1.5em;
-    padding-right: 0;
-    padding-top: 250px;
-    background-position: center -30px;
+  img {
+    display: block;
+    margin: 1em auto;
+    max-width: 290px;
+  }
+
+  @media (min-width : 751px) {
+    margin-top: 11px;
+
+    img {
+      width: 290px;
+      max-width: 30%;
+      float: right;
+      margin-top: 0;
+    }
   }
 }
 
-h2, h3 {
+h2,
+h3 {
   margin-top: 2em;
 }
 h2 {
@@ -314,13 +357,12 @@ h4 {
 
 // This is the title
 #sass_syntactically_awesome_stylesheets {
-  padding: 2.5em .5em 1.5em 290px;
-  h1 {
-    margin-bottom: .2em;
-  }
-  @media only screen and (max-width : 750px) {
-    font-size: .5em;
-    padding: 2em .5em 1.5em 0;
+  padding: 1.5em .5em .75em 290px;
+  margin-bottom: 0;
+
+  @media (max-width: 750px) {
+    font-size: 1.5em;
+    padding-left: 0;
   }
 }
 
@@ -342,7 +384,7 @@ h4 {
     border-top: 0;
   }
 
-  @media only screen and (max-width : 750px) {
+  @media (max-width : 750px) {
     padding-left: 0;
   }
 }
@@ -371,6 +413,3 @@ h4 {
     background-color: darken($hopbush, 10%);
   }
 }
-
-// Pretty syntax highlighting
-@import 'prettify';

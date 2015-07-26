@@ -1,19 +1,70 @@
 /*!
-  You are looking at the compiled version of the CSS
+ * You are looking at the compiled version of the CSS
+ *
+ * You can view the source Sass file here:
+ * https://github.com/Kaelig/Sass-reference/blob/master/s.scss
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
 
-  You can view the source Sass file here:
-  https://github.com/Kaelig/Sass-reference/blob/master/s.scss
-*/
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
 body {
   font-family: sans-serif;
-  line-height: 1.5;
+  line-height: 1.4;
   margin: 0;
+  padding-left: 16px;
+  padding-right: 16px;
   -webkit-text-size-adjust: none;
   -ms-text-size-adjust: none;
-  border-top: 4px solid #cc6699; }
-  @media only screen and (max-width: 750px) {
+  border-top: 4px solid #c69; }
+  @media (max-width: 750px) {
     body {
-      padding: .5em 16px; } }
+      padding-top: .5em;
+      padding-bottom: .5em; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: IowanOldStyle-Roman, Georgia, serif;
@@ -67,16 +118,17 @@ p .right {
   padding: 0; }
 
 a {
-  color: #669999;
+  color: #699;
   text-decoration: none; }
-  a:hover, a:focus {
+  a:hover,
+  a:focus {
     text-decoration: underline; }
   a:visited {
     color: #85adad; }
   a:focus {
     color: #476b6b; }
   a:hover {
-    color: #003366; }
+    color: #036; }
   a:active {
     color: #334c4d; }
 
@@ -177,7 +229,7 @@ small, .small {
   position: relative;
   padding: 1em 1em 1.33em 1.33em;
   margin-right: 2em; }
-  @media only screen and (max-width: 750px) {
+  @media (max-width: 750px) {
     .maruku_toc {
       float: none;
       margin-left: -16px;
@@ -200,7 +252,8 @@ small, .small {
       color: #5c8a8a; }
       .maruku_toc ul a:visited {
         color: #3c4048; }
-      .maruku_toc ul a:focus, .maruku_toc ul a:hover {
+      .maruku_toc ul a:focus,
+      .maruku_toc ul a:hover {
         color: #649696; }
       .maruku_toc ul a:active {
         color: #5c8a8a; }
@@ -211,7 +264,8 @@ small, .small {
         color: #484c55; }
         .maruku_toc ul ul a:visited {
           color: #35383f; }
-        .maruku_toc ul ul a:focus, .maruku_toc ul ul a:hover {
+        .maruku_toc ul ul a:focus,
+        .maruku_toc ul ul a:hover {
           color: #484c55; }
         .maruku_toc ul ul a:active {
           color: #5c8a8a; }
@@ -220,7 +274,7 @@ small, .small {
 
 #filecontents {
   padding-right: 2em; }
-  @media only screen and (max-width: 750px) {
+  @media (max-width: 750px) {
     #filecontents {
       padding-right: 0; } }
 
@@ -228,108 +282,10 @@ small, .small {
   overflow: hidden; }
   .bettersassdocs a {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-    .bettersassdocs a:hover, .bettersassdocs a:focus {
+    .bettersassdocs a:hover,
+    .bettersassdocs a:focus {
       text-decoration: none;
       border-bottom-color: rgba(0, 0, 0, 0.3); }
-
-#intro {
-  font-size: 1.2em;
-  padding-right: 320px;
-  min-height: 280px;
-  margin-top: 11px;
-  background: url("better-sass-docs.png") right -30px no-repeat;
-  background-size: 300px 300px; }
-  @media only screen and (max-width: 750px) {
-    #intro {
-      margin-top: 1.5em;
-      padding-right: 0;
-      padding-top: 250px;
-      background-position: center -30px; } }
-
-h2, h3 {
-  margin-top: 2em; }
-
-h2 {
-  border-top: 2px solid #eee; }
-
-h4 {
-  font-weight: bold;
-  color: #777; }
-
-#sass_syntactically_awesome_stylesheets {
-  padding: 2.5em .5em 1.5em 290px; }
-  #sass_syntactically_awesome_stylesheets h1 {
-    margin-bottom: .2em; }
-  @media only screen and (max-width: 750px) {
-    #sass_syntactically_awesome_stylesheets {
-      font-size: .5em;
-      padding: 2em .5em 1.5em 0; } }
-
-:target {
-  background: rgba(204, 102, 153, 0.3);
-  outline: 8px solid rgba(204, 102, 153, 0.3); }
-
-#footer {
-  border-top: 1px solid #D2D2D2;
-  box-shadow: #F0F0F0 0 1px 0 inset;
-  font-size: .75em;
-  padding: 2em 2em 2em 290px; }
-  #footer h2 {
-    font-size: 1.3em;
-    border-top: 0; }
-  @media only screen and (max-width: 750px) {
-    #footer {
-      padding-left: 0; } }
-
-.btn {
-  display: inline-block;
-  background-color: #cc6699;
-  padding: 5px 14px 6px;
-  margin-bottom: .2em;
-  font-size: .875em;
-  line-height: normal;
-  font-family: IowanOldStyle-Roman, Georgia, serif; }
-  .btn, .btn:link, .btn:visited {
-    color: #fff; }
-  .btn:hover, .btn:focus {
-    background-color: #d279a6;
-    text-decoration: none; }
-  .btn:active {
-    background-color: #bf4080; }
-
-.bettersassdocs {
-  /* Hemisu Light */
-  /* Original theme - http://noahfrederick.com/vim-color-scheme-hemisu/ */ }
-  .bettersassdocs .pln {
-    color: #111111; }
-  .bettersassdocs .str {
-    color: #739200; }
-  .bettersassdocs .kwd {
-    color: #739200; }
-  .bettersassdocs .com {
-    color: #999999; }
-  .bettersassdocs .typ {
-    color: #ff0055; }
-  .bettersassdocs .lit {
-    color: #538192; }
-  .bettersassdocs .pun {
-    color: #111111; }
-  .bettersassdocs .opn {
-    color: #111111; }
-  .bettersassdocs .clo {
-    color: #111111; }
-  .bettersassdocs .tag {
-    color: #111111; }
-  .bettersassdocs .atn {
-    color: #739200; }
-  .bettersassdocs .atv {
-    color: #ff0055; }
-  .bettersassdocs .dec {
-    color: #111111; }
-  .bettersassdocs .var {
-    color: #111111; }
-  .bettersassdocs .fun {
-    color: #538192; }
   .bettersassdocs code,
   .bettersassdocs pre {
     padding: 0 3px 2px;
@@ -350,5 +306,78 @@ h4 {
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word; }
+    .bettersassdocs pre code {
+      background: transparent; }
+
+#intro {
+  font-size: 1.2em;
+  min-height: 280px;
+  margin-top: 1.5em; }
+  #intro img {
+    display: block;
+    margin: 1em auto;
+    max-width: 290px; }
+  @media (min-width: 751px) {
+    #intro {
+      margin-top: 11px; }
+      #intro img {
+        width: 290px;
+        max-width: 30%;
+        float: right;
+        margin-top: 0; } }
+
+h2,
+h3 {
+  margin-top: 2em; }
+
+h2 {
+  border-top: 2px solid #eee; }
+
+h4 {
+  font-weight: bold;
+  color: #777; }
+
+#sass_syntactically_awesome_stylesheets {
+  padding: 1.5em 0.5em 0.75em 290px;
+  margin-bottom: 0; }
+  @media (max-width: 750px) {
+    #sass_syntactically_awesome_stylesheets {
+      font-size: 1.5em;
+      padding-left: 0; } }
+
+:target {
+  background: rgba(204, 102, 153, 0.3);
+  outline: 8px solid rgba(204, 102, 153, 0.3); }
+
+#footer {
+  border-top: 1px solid #D2D2D2;
+  box-shadow: #F0F0F0 0 1px 0 inset;
+  font-size: .75em;
+  padding: 2em 2em 2em 290px; }
+  #footer h2 {
+    font-size: 1.3em;
+    border-top: 0; }
+  @media (max-width: 750px) {
+    #footer {
+      padding-left: 0; } }
+
+.btn {
+  display: inline-block;
+  background-color: #c69;
+  padding: 5px 14px 6px;
+  margin-bottom: .2em;
+  font-size: .875em;
+  line-height: normal;
+  font-family: IowanOldStyle-Roman, Georgia, serif; }
+  .btn,
+  .btn:link,
+  .btn:visited {
+    color: #fff; }
+  .btn:hover,
+  .btn:focus {
+    background-color: #d279a6;
+    text-decoration: none; }
+  .btn:active {
+    background-color: #bf4080; }
 
 /*# sourceMappingURL=s.css.map */
