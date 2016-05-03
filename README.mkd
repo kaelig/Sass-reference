@@ -37,4 +37,4 @@ Install Sass, then open the terminal and run:
 
 or, if running [node-sass](https://github.com/sass/node-sass):
 
-`node-sass --watch s.scss s.css --source-map s.css.map`
+`node-sass s.scss s.css --source-map true`
