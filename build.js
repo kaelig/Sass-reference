@@ -12,11 +12,12 @@ fetch('http://sass-lang.com/documentation/file.SASS_REFERENCE.html')
   .then(render)
   .then(html => fs.writeFileSync('index.html', html))
 
-function syntaxHighlighting(html) {
+function syntaxHighlighting (html) {
   let $ = cheerio.load(html)
 
   $('.code code').each((i, element) => {
     const code = $(element).text()
+
     $(element)
       .addClass('language-scss')
       .empty()
@@ -26,18 +27,17 @@ function syntaxHighlighting(html) {
   return $.html()
 }
 
-function pointLinksToSassWebsite(html) {
+function pointLinksToSassWebsite (html) {
   let $ = cheerio.load(html)
   let rootUrl = 'http://sass-lang.com/documentation/'
 
   $('a[href^=Sass]').each((i, element) =>
-    $(element)
-      .attr('href', rootUrl + $(element).attr('href')))
+    $(element).attr('href', rootUrl + $(element).attr('href')))
 
   return $.html()
 }
 
-function removeExtraContent(html) {
+function removeExtraContent (html) {
   let $ = cheerio.load(html)
 
   $('.maruku_toc + p').remove() // remove intro
@@ -47,21 +47,20 @@ function removeExtraContent(html) {
   return $.html()
 }
 
-function getBodyAndToc(html) {
+function getBodyAndToc (html) {
   let $ = cheerio.load(html)
 
   return {
-    body:
-      [$('#filecontents').html()]
-        .map(removeExtraContent)
-        .map(syntaxHighlighting)
-        .map(pointLinksToSassWebsite)
-        .toString(),
+    body: [$('#filecontents').html()]
+      .map(removeExtraContent)
+      .map(syntaxHighlighting)
+      .map(pointLinksToSassWebsite)
+      .toString(),
     toc: $('.maruku_toc').html()
   }
 }
 
-function render({ body, toc }) {
+function render ({ body, toc }) {
   let template = fs.readFileSync('template.html', 'utf8')
   let $ = cheerio.load(template)
 
@@ -72,8 +71,7 @@ function render({ body, toc }) {
 
   // Add ?<timestamp> to the stylesheet to bust the cache
   $('link[rel="stylesheet"]').each((i, element) =>
-    $(element)
-      .attr('href', $(element).attr('href') + '?' + Date.now()))
+    $(element).attr('href', $(element).attr('href') + '?' + Date.now()))
 
   return $.html()
 }
