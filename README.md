@@ -23,7 +23,7 @@ This reference is readable on desktop, mobile and tablets.
 
 ## “Design” of Better Sass Docs
 
-- [Kaelig](http://www.kaelig.fr)
+- [Kaelig](https://www.kaelig.fr)
 
 ## Thanks to…
 
