@@ -12,8 +12,9 @@ fetch('http://sass-lang.com/documentation/file.SASS_REFERENCE.html')
   .then(render)
   .then(html => fs.writeFileSync('index.html', html))
 
-function highlight(html) {
+function syntaxHighlighting(html) {
   let $ = cheerio.load(html)
+
   $('.code code').each((i, element) => {
     const code = $(element).text()
     $(element)
@@ -21,22 +22,28 @@ function highlight(html) {
       .empty()
       .append(Prism.highlight(code, Prism.languages.scss))
   })
+
   return $.html()
 }
 
-function absoluteLinks(html) {
+function pointLinksToSassWebsite(html) {
   let $ = cheerio.load(html)
+  let rootUrl = 'http://sass-lang.com/documentation/'
+
   $('a[href^=Sass]').each((i, element) =>
     $(element)
-      .attr('href', `http://sass-lang.com/documentation/${$(element).attr('href')}`))
+      .attr('href', rootUrl + $(element).attr('href')))
+
   return $.html()
 }
 
 function removeExtraContent(html) {
   let $ = cheerio.load(html)
+
   $('.maruku_toc + p').remove() // remove intro
   $('.maruku_toc').remove()
   $('h1#sass_syntactically_awesome_stylesheets').remove()
+
   return $.html()
 }
 
@@ -45,12 +52,10 @@ function getBodyAndToc(html) {
 
   return {
     body:
-      [
-        $('#filecontents').html()
-      ]
+      [$('#filecontents').html()]
         .map(removeExtraContent)
-        .map(highlight)
-        .map(absoluteLinks)
+        .map(syntaxHighlighting)
+        .map(pointLinksToSassWebsite)
         .toString(),
     toc: $('.maruku_toc').html()
   }
@@ -59,6 +64,8 @@ function getBodyAndToc(html) {
 function render({ body, toc }) {
   let template = fs.readFileSync('template.html', 'utf8')
   let $ = cheerio.load(template)
+
+  // Add content to the template
   $('#bsd-body').append(body)
   $('#bsd-toc').append(toc)
   $('#bsd-updated').text(new Date().toString())
@@ -67,5 +74,6 @@ function render({ body, toc }) {
   $('link[rel="stylesheet"]').each((i, element) =>
     $(element)
       .attr('href', $(element).attr('href') + '?' + Date.now()))
+
   return $.html()
 }
