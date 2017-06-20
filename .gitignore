@@ -5,3 +5,4 @@
 Icon
 *.tmproj
 ._*
+node_modules
