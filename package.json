@@ -1,0 +1,20 @@
+{
+  "name": "bettersassdocs",
+  "version": "1.0.0",
+  "description": "A more readable Sass reference.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run build",
+    "build": "npm run build:html && npm run build:sass",
+    "build:html": "node build.js",
+    "build:sass": "node-sass --source-map true --output-style compressed s.scss s.css"
+  },
+  "author": "Kaelig Deloumeau-Prigent",
+  "license": "MIT",
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.1",
+    "node-fetch": "^1.7.1",
+    "node-sass": "^4.5.3",
+    "prismjs": "^1.6.0"
+  }
+}

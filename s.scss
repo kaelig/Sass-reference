@@ -13,10 +13,6 @@ $midnight-blue: #036;
 $dawn-pink: #f2ece4;
 $nebula: #d2e1dd;
 
-// ============================== */
-// = Blueprint Typography Setup = */
-// ============================== */
-
 $font-color: darken($pale-sky, 15);
 
 $serif-font-stack: IowanOldStyle-Roman, Georgia, serif;
@@ -204,7 +200,7 @@ small, .small {
 }
 
 $toc-width: 220px;
-.maruku_toc {
+#bsd-toc {
   float: left;
   width: $toc-width;
   background: lighten($nebula, 10%);
@@ -269,6 +265,7 @@ $toc-width: 220px;
     }
   }
 }
+
 #filecontents {
   padding-right: 2em;
 
@@ -276,7 +273,8 @@ $toc-width: 220px;
     padding-right: 0;
   }
 }
-.bettersassdocs {
+
+#bsd-body {
   overflow: hidden;
 
   a {
@@ -318,6 +316,7 @@ $toc-width: 220px;
     }
   }
 }
+
 #intro {
   @extend .quiet;
   font-size: 1.2em;
