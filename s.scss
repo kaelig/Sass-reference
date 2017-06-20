@@ -301,12 +301,12 @@ $toc-width: 220px;
     line-height: 1.5em;
     font-size: 1em;
     border: 1px solid darken($dawn-pink, 4%);
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
 
     code {
       background: transparent;
+      white-space: pre;
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
   }
 }
