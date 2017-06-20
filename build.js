@@ -8,7 +8,6 @@ require('prismjs/components/prism-scss')
 
 fetch('http://sass-lang.com/documentation/file.SASS_REFERENCE.html')
   .then(res => res.text())
-  .then(cheerio.load)
   .then(getBodyAndToc)
   .then(render)
   .then(html => fs.writeFileSync('index.html', html))
@@ -41,7 +40,9 @@ function removeExtraContent(html) {
   return $.html()
 }
 
-function getBodyAndToc($) {
+function getBodyAndToc(html) {
+  let $ = cheerio.load(html)
+
   return {
     body:
       [
