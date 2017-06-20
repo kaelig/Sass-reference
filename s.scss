@@ -17,7 +17,7 @@ $font-color: darken($pale-sky, 15);
 
 $serif-font-stack: IowanOldStyle-Roman, Georgia, serif;
 
-$link-color: #699;
+$link-color: #669999;
 $link-hover-color: $midnight-blue;
 $link-active-color: darken($link-color, 25%);
 $link-visited-color: lighten($link-color, 10%);
@@ -82,12 +82,10 @@ h6 {
 p {
   margin: 0 0 1.5em; }
   p .left {
-    display: inline;
     float: left;
     margin: 1.5em 1.5em 1.5em 0;
     padding: 0; }
   p .right {
-    display: inline;
     float: right;
     margin: 1.5em 0 1.5em 1.5em;
     padding: 0; }
@@ -231,9 +229,7 @@ $toc-width: 220px;
     font-weight: bold;
     a {
       color: darken($link-color, 5%);
-      &:visited {
-        color: darken($font-color, 5%);
-      }
+
       &:focus,
       &:hover {
         color: darken($link-color, 1%);
@@ -248,9 +244,7 @@ $toc-width: 220px;
       a {
         font-weight: normal;
         color: $font-color;
-        &:visited {
-          color: darken($font-color, 8%);
-        }
+
         &:focus,
         &:hover {
           color: $font-color;

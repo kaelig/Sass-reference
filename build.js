@@ -11,7 +11,7 @@ fetch('http://sass-lang.com/documentation/file.SASS_REFERENCE.html')
   .then(cheerio.load)
   .then(getBodyAndToc)
   .then(render)
-  .then(html => fs.writeFileSync('foo.html', html))
+  .then(html => fs.writeFileSync('index.html', html))
 
 function highlight(html) {
   let $ = cheerio.load(html)
@@ -33,16 +33,21 @@ function absoluteLinks(html) {
   return $.html()
 }
 
+function removeExtraContent(html) {
+  let $ = cheerio.load(html)
+  $('.maruku_toc + p').remove() // remove intro
+  $('.maruku_toc').remove()
+  $('h1#sass_syntactically_awesome_stylesheets').remove()
+  return $.html()
+}
+
 function getBodyAndToc($) {
   return {
     body:
       [
-        $('#filecontents')
-          .remove('.maruku_toc + p') // remove intro
-          .remove('.maruku_toc')
-          .remove('h1#sass_syntactically_awesome_stylesheets')
-          .html()
+        $('#filecontents').html()
       ]
+        .map(removeExtraContent)
         .map(highlight)
         .map(absoluteLinks)
         .toString(),
